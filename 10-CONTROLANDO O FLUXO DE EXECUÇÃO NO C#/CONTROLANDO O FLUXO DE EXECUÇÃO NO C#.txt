@@ -1,0 +1,37 @@
+	CONTROLANDO O FLUXO DE EXECUÇÃO NO C#    -- Victor da Silva
+	
+		O Dev será capaz de aprender as estruturas de condição e repetição bem como receber e capturar
+	informações do usuário pelo console.
+		
+		
+		 -Capturando Entradas do Usuário pelo Console
+		
+		Entender como capturar as informações enviadas pelo usuário e fazer cálculos a partir dessas
+		informações.
+		
+		------------------------------------------------------------------------------------------------
+		-Comandos condicionais, IF e SWITCH
+		
+		Entender como funciona as condicionais em uma aplicação de diversas formas e soluções.
+		
+		-------------------------------------------------------------------------------------------------
+		-Comandos de Repetição, FOR, FOREACH, DO, WHILE
+		
+		Entender a Funcionalidade dos comandos de repetição para executar determinado bloco de um código.
+			
+		-------------------------------------------------------------------------------------------------
+		-Pulando com BREAK e CONTINUE
+		
+		Entender como pula uma determinada condição dentro de um bloco de laço de repetição
+		-------------------------------------------------------------------------------------------------
+		
+		https://github.com/VictordaSiIva/ControlandoFluxoExecucao 
+		
+		
+		
+		
+		
+		
+		
+	
+		

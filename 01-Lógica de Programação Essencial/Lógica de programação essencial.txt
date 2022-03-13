@@ -1,0 +1,325 @@
+Lógica de porgramação - Denilson Bonatti
+
+Programar é resolver problemas
+
+Mapa mental para montar oa algoritimos
+
+O que é lógica?
+Coerencia de raciocinio de idéias
+seuqncia coerente, regular
+
+lógica de programação?
+
+Contextualizae a lógica na programação
+
+Metacoginição
+
+Pensar como vc pensa
+
+Abstração
+
+"Abstração é a habilidade de concetrar nos aspectos essenciais de um contexto qualquer , ignorando
+caracterisicas menos importantes ou acidentais"
+ou
+Removendo informações que não são necessárias para resolver um problemas
+--------------------------------------------------------------------------------
+Exercício
+
+Crie um mapa mental para resolver um determinado problema, por exemplo, calcular a média aritmética
+de 4 notas, sabendo que as notas são as seguintes:
+
+Nota 1:5
+Nota 2:7
+Nota 3:10
+Nota 4:3
+
+5+7+10+3 = 6,25
+
+Qual é a fórmula da média?
+A média de um conjunto de valores numéricos é calculada somando-se todos estes valores e dividindo-se o resultado
+pelo número de elementos somados
+
+-------------------------------------------------------------------------------------------
+
+Algoritimos e pseudos códigos
+
+O que é um algoritimos ?
+
+'Sequencia de passos que resolve um problema"
+
+http://studio.code.org/s/mc/stage/1/puzzle/1
+
+Pseudocódigo
+
+É uma forma generica de escrever um algoritimo, utilizando uma linguagem simples
+
+https://www.proprofs.com/games/wolf-sheep-and-cabbage/
+
+Inicio do jogo
+Ovelha entra no barco
+Atravesso
+ovelha sai do barco
+atravesso
+lobo entra no barco
+atravesso
+lobo sai do barco
+ovelha entra no barco
+atravesso
+repolho entra no barco
+atravesso
+Repolho sai do barco
+atravesso
+ovelha entra no barco
+atravesso
+Ovelha sai do barco
+Fim do Jogo
+
+https://rachacuca.com.br/jogos/pinguins-numa-fria/
+
+Fluxograma ,variaveis e constantes
+
+O que é um fluxograma?
+
+É um ferramenta utilizada para representar graficamente o algoritimo, isto é , a sequencia 
+lógica e coerente do fluxo de dados
+
+variaveis e constantes
+
+O que são variaveis ?
+
+Na programação, uma variável é um objeto (uma posição, frequentemente localizada na memória)
+capaz de reter e representar um valor ou expressão
+Uma variável é um espaço na memóeia do computador destinado a um dado que é alterado durante 
+a execução do algoritimo.
+
+Inicio
+declara nota 1:número
+declara nota 2:número
+declara nota 3:número
+declara nota 4:número
+declara média:número
+leia (nota1)
+leia (nota2)
+leia (nota3)
+leia (nota4)
+media=(nota1+nota2+nota3+nota4)/4
+imprimir(media)
+Fim
+
+Tipos Variaveis e constantes
+numericas, caracteres, alfanumericas ou lógicas
+
+O que é uma Constante?
+
+As constantes são valores imutáveis e não são alterados durante a vida útil do programação
+
+inicio
+declara pi=3,14(--constante)
+declara raio:numero(--variavel)
+
+http://www.flowgorithm.org
+
+------------------------------------------------------------------------------------------------
+
+Tomadas de decisão e expressões
+
+Expressoes aritméticas
+
++ - * / ^ %    -- ^ = potenciação ex:2 ao quadrado,2 elevado ao cubo...etc
+
+Expressoes literais
+
+Caracteres em uma variavel ou constante sempre em ""
+Exemplo:
+
+nome = "José da Silva"
+media(nota1+nota2+nota3...)/x
+
+Operadores relacionais
+
+verdadeiro e falsos
+
+x >y
+x>=y
+x<y
+x<=y
+x==y - igualdade
+x!=y - diferente de
+ou
+x<>y
+
+
+Tomadas de decisão
+
+decidir o que fazer dependendo de  alguma condição encontrada durante a execução if
+
+Concatenação
+
+unir o conteudo de duas Strings
+Strings= uma sequencia de caracteres
+
+Muito util na exibição para o usuario final
+
+------------------------------------------------------------------------------------------------------
+
+Estrutura de repetição
+
+Dentro da lógica de programação é uma estrutura que permite executar mais de uma vez o mesmo comando ou conjunto 
+de comandos, de acordo com uma condição ou com um contador
+
+-----------------------------------------------------------------------------------
+
+Lingtuagens de programação e o Portugol(pseudos codigos na pratica)
+
+Linguagem de Programação é uma linguagem escrita e formal que especifica um conjunto de instruções e regras usadas para gerar 
+programas(software)
+Meio de comunicação entre computadores e humanos
+
+Alto nivel
+Sintaxe aproxima da nossa linguagem
+Baixo nivel
+Aproxima mais da linguagem de máquina
+
+Compiladas - é uma linguagem de programação em q2ue o código fonte, é executado diretamente pelo sistema operacional
+ou pelo processador, após ser traduzido por meio de uma processo chamado compilação, o compilador cria um arquivo 
+executavel (EXE) para instalar no sistema.c#, visual basic, delphi,c++
+
+Interpretadas
+
+É uma linguagem de programação em que o código fonte é executado por um programa de computador chamado interpretador que em 
+seguida é executado pelo sistema operacional ou processador.javascript,php,python
+
+O que é Portugol?
+
+É uma pseudolinguagem que Permite ao leitor desenvolver algoritimos estruturados em português de forma simples e 
+intuitiva, independente de linguagem de programação.
+
+IDE do portugol
+
+https://github.com/UNVALI-LITE/Portugol-Studio/releases/
+
+Desvios condicionais e comentarios no portugol
+
+Desvio condicional - se
+
+É utilizada a palavra reservada se, a condição a ser testada entre parenteses e as instruções que devem ser executadas
+entre chaves caso o desvio seja verdadeiro
+
+EX:
+se(media>=7){
+		escreva("Parabéns!! Você foi aprovado")
+}
+
+Desvios condicional -caso
+
+Este comando é similar aos comandos se e senão,e reduz a complexidade na escolha de diversas opções.Apesar de suas 
+similiaridades com o se, ele possui algumas diferenças. Neste comando não é possivel o uso de operadores lógicos, 
+ele apenas trabalha com valores definidos.
+
+Laços de Repetição em Portugol
+
+O que é Laços de repetição ou Estrutura de repetição?
+
+Dentro da lógica de programação é uma estrutura que permite executar mais de uma vez o mesmo comando ou conjunto de 
+comandos, de acordo com uma condição ou com um contador.
+
+
+Matrizes e Vetores
+
+Uma matriz é uma coleção de variáveis de mesmo tipo (EX:vc não pode ter dentro de uma matriz variaveis do tipo cadeia
+ e variavies do tipo inteiro), acessíveis com um único nome e armazenados contiguamente (sequencia) na memoria.
+A individualização de cada variável de um vetor é feita através do uso de indices.
+Os Vetores são matrizes de uma só dimensão.
+
+Exemplo:
+
+cadeia Vetor[5]; //declara um vetor de 5 posições
+cadeia Matriz[5][3];//declara uma matriz de 5 linhas e 3 colunas
+
+cadeia frutas[4];
+frutas[0]="Maçã"
+frutas[1]="Uva"           //Vetor
+frutas[2]="Melão"
+escreva(frutas[2])
+
+cadeia cesta[][] ={{"Maçã","100"},{"Pera","200"},{"Melão","300"}}
+
+escreva("Frutas: " + cesta[0][0] + "Quantidade: " + cesta[0][1])
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

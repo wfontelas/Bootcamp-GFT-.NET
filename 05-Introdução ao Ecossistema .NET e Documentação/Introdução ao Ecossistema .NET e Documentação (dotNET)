@@ -1,0 +1,123 @@
+Introdução ao Ecossistema .NET e Documentação (dotNET)
+
+Carolina Santana Louzada |LinkedIn
+
+Visão Geral do Ecossistema .NET
+
+ .NET Foundation
+ 
+ Sobre o .NET Framework, .NET Core e Xamarin
+ 
+ a plataforma .NET é Gratuito(open Source)  -Microsoft
+ 
+ Abordagem Multiplataforma
+ 
+ Entendendo .Net Framework
+ 
+ 
+ CI/CD, continuous integration/continuous delivery, é um método para entregar 
+ aplicações com frequência aos clientes. Para isso, é aplicada a automação nas 
+ etapas do desenvolvimento de aplicações. Os principais conceitos atribuídos a 
+ esse método são a integração, entrega e implantação contínuas.
+ ------------------------------------------------------------------------------
+ 
+ Desenvolvimento multiplataforma com .NET: contexto e conceitos
+ 
+ App Models  .NET Framework		.Net Core		Xamarin
+				WPF					UWP			Xamarin IOS
+			Windows Forms		ASP.NET Core	Xamarin Forms
+			  ASP.NET							Xamarin Android
+												Xamarin MAC
+
+Base					.NET Standart Library
+Library				Platform Agnostic Assemblies
+					.NET Plataform Standart(Contracts)
+					
+		.NET Framework		CoreFx Class Library	Mono Class Library
+		 Class Library
+
+---------------------------------------------------------------------------------------------
+Padrão de codificação .NET
+
+O que é um bom código?
+
+ser confiavel
+ser sustentavel
+ser eficiente  (Eficiencia e desempenho X confiabilidade e facilidade)
+						|
+				quando for um requisito 
+					da aplicação
+					
+-Melhor comunicação entre equipe
+-Facilitar manutenção do código
+-Utilizar doeumentação e boas práticas de codificação, como clean code
+
+
+Clean code
+
+Conjuntode boas praticas na escrita de software para a obtenção	de maior legibilidade 	
+e manutenbilidade de código
+
+Convenções de nomeclatura
+
+VIde Slide ppt
+
+------------------------------------------------------------------------------------------------
+
+Ferramentas e Linguagens
+
+IDE :Ambiente de desenvolvimento integrado:
+
+-Visual Studio
+
+-JetBrains Rider
+
+Editor de código:
+
+-Visual Studio Code
+
+Suíte de desenvolvimento integradas:
+
+-OmniSharp
+
+Pacote de extensão:
+
+Ionide --Extensão para o VS code que dá completo suporte para o desenvolvimento F#
+
+Console:
+
+.NET Core CLI
+
+
+
+Linguagens suportadas pela plataforma .NET
+
+C# - mais popular
+
+F# - paradigma funcional
+
+Visual Basic
+
+-------------------------------------------------------------------------------------------
+.NET X .NET Framework : Qual escolher para minha aplicação?
+
+O que usar para cada tipo de aplicação
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

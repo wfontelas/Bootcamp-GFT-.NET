@@ -1,0 +1,15 @@
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\obj\Debug\net6.0\11 - Testes.csproj.AssemblyReference.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\obj\Debug\net6.0\11 - Testes.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\obj\Debug\net6.0\11 - Testes.AssemblyInfoInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\obj\Debug\net6.0\11 - Testes.AssemblyInfo.cs
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\obj\Debug\net6.0\11 - Testes.csproj.CoreCompileInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\bin\Debug\net6.0\11 - Testes.exe
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\bin\Debug\net6.0\11 - Testes.deps.json
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\bin\Debug\net6.0\11 - Testes.runtimeconfig.json
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\bin\Debug\net6.0\11 - Testes.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\bin\Debug\net6.0\ref\11 - Testes.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\bin\Debug\net6.0\11 - Testes.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\obj\Debug\net6.0\11 - Testes.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\obj\Debug\net6.0\ref\11 - Testes.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\obj\Debug\net6.0\11 - Testes.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\11 - Testes\obj\Debug\net6.0\11 - Testes.genruntimeconfig.cache

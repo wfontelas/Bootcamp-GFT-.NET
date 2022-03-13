@@ -1,0 +1,727 @@
+Primeiro Passos com  .NET Gabriel Faraday -.NET Developer
+
+O que é .NET ?
+
+Conhecendo o Framwework
+
+Microsoft -anos 70 - BASIC
+Microsoft & IBM 80 - DOS
+Microsoft -anos 90 (IDEs e Runtimes ) visual studio
+Microsoft -anos 2000 -Microsoft .NET 
+		  -	2002 - Visual Studio .NET 1.0
+		  - 2005 - Visual Studio 2005 C# 2.0
+		  -	2008 - Visual Studio 2008 .NET C# 3.0
+		  -	2010 - Visual Studio 2010 .NET C# 4.0
+		  -	2011 - Surge Xamarin C# p Android
+		  - 2012 - Visual Studio 2012  .NET 4.5 C# 5.0 lançamento do typescript
+		  -	2014 - cloud  - Criando .NET foundation -open source/ ASP.NET VNEXT
+		  - 2015 - Visual Studio 2015 .NET 4.6  C# 6 Visual Studio Code(VSCode)
+		  - 2016 - Adquire a Xamarin na sua stack .NET Visual Studio for macOS /.NET Core 1.0
+		  -	2017 - Visual Studio 2017 .NET Framework 4.7 .NET Core 2.0 C# 7.0
+		  - 2019 - Visual Studio 2019 .NET Framework 4.8 C# 7.3 .NET Core 3.0 com o C# 8.0
+
+		  - 2020 .NET 5.0
+		  - 2021 .NET 6.0
+
+
+
+
+Como e onde usar .NET 
+
+
+Infrastrutura para desenvolvimento de software pela Microsoft
+
+Uma aplicação .NET é desenvolvida para roda em uma das seguintes implementações do .NET:
+
+.NET Core
+.NET Framework
+ Mono
+ Universal Windows  Plataform (UWP) --XBOX
+ 
+ .NET Standard Library - One Library to rule them all
+ 
+ Como ?
+ 
+ Cada implementação inclui um ou mais .NET Runtimes (ambiente de execução):
+ 
+ .NET Core : Core CLR e CoreRT
+ .NET Framework : CLR
+  Mono : Mono Runtime
+  UWP: .NET Native
+  
+  Linguagens para .NET
+  
+  C# F#	VB.NET
+  
+  " O mercado fala C# "
+  
+  Onde ?
+  
+  .NET 5 - Desktop(WPF, Windows Forms, UWP)
+		 - WEB (ASP.NET)
+		 - Cloud(Azure)
+		 - Mobile(Xamarin)								--------------------------- VS,VSCode,VS for MAC, CLI				
+		 - Gaming(Unity)																  |
+		 - IoT(ARM32, ARM64)														Multiplataforma
+		 - AI(ML.NET,.NET for Apache Spark)
+		 
+ Quem usa .NET
+
+Casas BAhia,Saraiva, Petrobras, Unimed, AACD, GOL, AZUL, Itau, Linx , MAGALU e etc
+
+stackoverflow - site mais acessados do mundo para Developer
+
+Microsoft - criou e utiliza .NET
+
+--------------------------------------------------------------------------------------------------------------------
+
+Iniciando com .NET - Ambiente de Desenvolvimento
+
+Preparando o Ambiente 
+
+Download:
+
+SDK (Software development kit) do .NET Core
+VSCode
+
+
+Conhecendo a CLI do .NET
+
+dotnet --help           - documentação do .NET
+
+dotnet run 				- builda e roda o programa
+
+dotnet new --help      - documentação do comando , no caso "new"
+
+dot nuget -gerenciaor de pacotes similar ao npm (Front-End)
+	tool
+	
+
+Criando uma aplicação console
+
+dotnet new console -h     - documentação do sub-comando "console"
+
+Para ver a ajuda de outros idiomas de modelo (F#, VB), use a opção--language:
+   dotnet new console -h --language F#
+   
+ explorer .       		--- Abre a pasta em janelas no Windows
+
+Extensão .csproj - C Sharp Project
+
+William@DESKTOP-1GPQL6U C:\workspace\Bootcamp GFT Start #3 .NET\8-Primeiros Passos com o .NET\projeto_Primeiro_passo_dotnet\DigitalInnovationOne
+$ code .       --Abrira a pasta no VsCode
+
+dotnet restore        -restaura os pacotes 
+dotnet build		  - compila o programa ,restaura e gera os arquivos de construção do programa (dll,exe, runtime)
+dotnet run			  -executa o programa 
+	
+	
+------------------------------------------------------------------------------------------------------------------------------
+
+Conhecendo o C#
+
+O que é e como funciona o C#   - criada pelo Anders Hejlsberg
+
+Linguagem mais utilizada em projetos .NET
+
+C# é uma linguagem elegante, orientada a objeto e fortimente tipada
+
+A sintaxe do C# é simlar a do C,C++ ou Java
+
+Suporta os conceitos de encapsulamento, herança e polimorfismo (Orientação a Objeto)
+
+
+Os programas C# são executados no .NET, que inclui:
+	-CLR (Common Language Runtime)
+	-Conjunto unificado de bibliotecas de classes
+
+Atualmente o compilador do C# é o Roslyn
+
+Como funciona ?
+
+O código-fonte escrito em C# é compilado em linguagem intermediária (IL)
+
+o codigo e os recurso de IL são armazenados no disco em um arquivo executável chamado assembly, geralmente com 
+extensão .exe ou .dll        **dotnet build....*
+
+Quando o programa C# é executado, o assembly é carregado no CLR
+
+Em seguida o CLR executará a compilação just in time (JIT) para converter o código IL em instruções de máquina 
+nativas
+
+ O CLR também fornece outros serviços:
+	- Garbage Collector
+	- Exception Handler
+	- Resources Manager
+
+
+***Estrutura de um programa**** C# ***
+
+Os principais conceitos organizacionais em C# são:
+
+	-Programas (Projetos)
+		-namespaces
+			-tipos
+				-membros
+		-assemblies
+			-dll
+		
+Programs C# consistem em um ou mais arquivos 
+
+Os programas declaram tipos, que contêm membros e podem ser organizados em namespaces
+
+Classes e interfaces são exemplos de tipos
+
+Campos, metodos, propiedades e eventos são exemplos de membros
+
+Quando os programas C# são compilados , eles são fisicamente empacotados em assemblies
+
+Os assemblies geralmente têm a extensão de arquivo .exe ou .dll, dependendo se são aplicações ou bibliotecas
+
+
+ F5 para Debugar, F10 próximo e F11 Entra no comando através do Break point
+ 
+ 
+ 
+ Ctrl + . Coloca uma nova clausula de using 
+ 
+
+
+Exemplo Prático
+ 
+ https://github.com/gabrielfaraday/csharp-examples
+ 
+ -----------------------------------------------------------------------------------------------------------------
+ 
+ Conhecendo Variáveis e instruções
+ 
+ Tipos de valor
+
+ Variáveis de tipos de valor contêm diretamente seus dados 
+ As variaveis têm sua própria cópia dos dados e não é possível que as operações afetem outra variável
+ (exceto no caso das variáveis de parâmetro ref e out )
+ 
+  Numéricos : sbyte, short, int, long, byte, ushort, uint, ulong
+  
+  Caracters Unicode: char
+  
+  Pontos flutuantes: float, double, decimal
+  
+  boleano: bool
+  
+  Enumerador: enum, 
+  
+  struct 
+  e tipos nullable (exemplo int ?)
+  
+  
+  Tipos de referência
+  
+  Variáveis de tipos de referência armazenam referências a seus dados
+  É possivel que duas variáveis façam referência ao mesmo objeto e, portanto,que operações em uma variável
+  afetem o objeto referenciado pela outra variável.
+       
+  
+  Tipo Classe : class, object, string
+  
+  Tipo Arrays: int[], int[,], etc...
+  
+  interface, delegate
+  
+  
+  
+  Utilizando instruções em programas
+  
+  
+  Ações de um programa são expressas usando instruções (geralmente delimitada por chaves)
+  
+  {
+	  Um bloco permite que várias instruções sejam escritas em contextos
+  }
+  
+  
+   No C# quando falamos em Instruções , nos estamos falando de declaração de variáveis e constantes locais
+   
+    -if			----------instruções condicional
+	-switch     
+	
+	-while		----------instruções de repetição
+	-do
+	-for
+	-foreach
+	
+	-break		----------instruções auxiliares
+	-continue
+	-return
+	
+	-throw   	---------instruções para a tratativa de exception
+	-try ..catch.. finally
+	
+	-using  	--------- instruções de using (dentro de uma classe importarmos referências e pacotes 
+	dentro de um projeto)
+	
+	
+	Exemplificando o conteúdo
+	
+	
+	  Ctrl + K + C - comentar o que foi selecionado
+  
+	  Ctrl +, - descomentar
+	
+	
+	Array
+
+ um array é uma estrutura de dados que contém um número X de elementos , todos do mesmo tipo, que são acessadas 
+ através de índices computados.
+
+ Arrays são tipos de referência e a declaração de uma variável array simplesmente reserva espaço para uma referência
+ de uma instância de array.	
+ 
+ Ao criar um array é especificado o tamanho da nova instância, que é fixo durante todo o tempo de vida da instância.
+ Os índices dos elementos de um array variam de 0 a comprimento do array -1.
+ 
+	Array unidimensional
+	
+	int[] a = new int [10];
+	for (int i = 0; i < a.Length; i++)
+	{
+		a[i] = i * i;
+	}
+	for (int i = 0; i < a.Length; i++)
+	{
+		Console.WriteLine ($"a[{i}] = {a[i]}");
+	}	
+	
+	
+	
+	Array multidimensional (Matrizes)
+	
+	int[,] a2 = new int[10, 5];
+	
+	int[,,] a3 = new int[10,5,2];
+	
+		
+	Inicializador de Array
+	
+	                                                            int[] t = new int[3]; 
+																t[0] = 1;
+	int[] a = new int [] {1, 2, 3};---							t[1] = 2;
+									---------  A mesma coisa =  t[2] = 3;
+	int[] a = {1, 2, 3};     --------							int[] a = t;
+--------------------------------------------------------------------------------------------------------------------
+
+
+  Classes e objetos  essenciais em C#
+  
+  Classes são os tipo mais fundamentais de C# ,as classes permitem que criamos objetos
+  
+  Uma classe é uma estrutura de dados que combina estado (campos, propriedades) e ações (metodos)
+  
+  Objetos são instâncias de uma classe
+  
+  As classes suportam herança e polimorfismo, mecanismos pelos quais as classes derivadas podem estender 
+  e especializar as classes base. 
+  
+  A classe é como se fosse a declaração , definindo , desenhando a estrutura, que vai gerar um objeto 
+  
+  
+  //declaração de uma classe
+  public class Ponto 
+  
+  {
+	  public int x, y ;
+	  public Ponto (int x, int y)
+	  {
+		  this.x = x;
+		  this.y = y;
+	  }
+		  
+  }
+  
+  Instâncias de classes (objetos) são criadas usando o operador new, que aloca memoria para uma nova  instância,
+  chama um construtor para inicializar a instância e retorna uma referência à instância.
+  
+  Ponto p1 = new Ponto(0, 0);
+  
+  Ponto p2 = new Ponto(10, 20);
+  
+  A memória ocupada por um objeto é recuperada automaticamente quando o objeto não está mais acessível. Não é 
+  necessário nem possível desalocar explicitamente objetos em C#.
+  
+  
+  Membros 
+  
+  Os membros de uma classe podem ser estáticos ou membros da instância.
+  
+  Membros estáticos pertencem a classe e membros de instância pertencem ao objeto.
+  
+  Membros são constantes, variáveis, métodos , propriedades, construtores, etc...
+  
+  
+  Acessibilidade
+  
+  Cada Membro de uma classe tem uma acessibilidade associada, que controla as regiões do texto do programa
+  que podem acessar o membro.
+  
+  Podem ser:
+	public         //Qualquer parte do projeto pode acessar
+	protected	   //somente as classes que herdam dessa classe base tem acesso ao protected
+	internal	   //só pode ser acessado de dentro do assemblie que ele faz parte, Ex : .csproject		
+	private		   //acessado unicamente da classe que esta contido
+	
+	
+  
+  Herança
+  
+  Uma declaração de classe pode especificar uma classe base, herdando os membros public, internal e protected
+  da classe base.
+  
+  Omitir uma especificação de classe base é o mesmo que derivar do tipo object ( quando eu não quero que uma 
+  classe herda de outra)
+  
+  Métodos 
+  
+  Um método é um membro que implementa uma computação ou ação que pode ser executada por um objeto ou classe.
+  
+  Os métodos podem ter uma lista de parâmentros, que representam valores ou referências de retorno, que especifica
+  o tipo do valor calculado e retornado pelo método.
+  
+  *Nome ao metodo: que esse nome seja um verbo que indica uma ação, e que as propriedades sejam substantivos
+  
+  
+  
+  
+  Como aplicar classes e objetos em projetos
+  
+  vide Arquivo 03- Classes  para rodar no vscode
+  
+  -------------------------------------------------------------------------------------------------------------------
+  
+  Trabalhando com structs, interfaces e enums
+  
+  O que são Structs?
+  
+  Como as classes, as structs são estruturas de dados que podem conter membros de dados e membros de ação,
+  mas, diferentemente das classes , as structs são tipos de valor e não requerem alocação de heap.
+  Uma varável de um tipo de struct armazena diretamente os dados da estrutura, enquanto uma variável de um 
+  tipo de classe armazena uma referência a um objeto alocado na memória.
+  
+  Structs não aceitam herança determinada pelo desenvolvedor. São úteis para pequenas estruturas de dados que 
+  possuem semântica de valor: números complexos, pontos em um sistema de coordenadas ou pares de chave-valor
+  em um dicionário são bons exemplos de utilização.
+  
+  O uso de structs em vez de classes para pequenas estruturas de dados pode fazer uma grande diferença no número 
+  de alocações de memória.
+  
+  
+  public class Ponto
+  {
+	  public int x, y;
+	  public Ponto(int x, int y)   
+	  {
+		  this.x = x;
+		  this.y = y;
+	  }
+  }
+  
+  
+  //se fosse utilizar essa classe ponto(acima) com o metodo main
+  
+  public static void Main ()
+  {
+	  Ponto[] pontos = new Ponto [100];  //consume muita alocação memória 
+	  for (int i =0; i < 100; i++)
+		  pontos [i] = new Ponto (i, i);
+  }
+
+//Transformando a estrutura classe em estrutura Struct
+
+  public struct Ponto
+  {
+	  public int x, y;
+	  public Ponto(int x, int y)   
+	  {
+		  this.x = x;
+		  this.y = y;
+	  }
+  }
+  
+  
+  Construtores de structs são chamados com o operador new, semelhante a um construtor de classe, mas em vez de 
+  alocar dinamicamente um objeto no heap gerenciado e retornar uma referência a ele, um construtor struct 
+  simplesmente retorna o próprio valor struct (normalmente em um local temporário na stack), e esse valor é copiado
+  conforme necessário.
+  
+  https://www.eximiaco.tech/pt/category/fundamentos
+
+
+
+
+  Entendendo a função de interfaces e enums
+
+  Interfaces
+   
+  uma interface define um contrato que pode ser implementado por classes e structs. Uma interface pode conter
+  métodos, propriedades , eventos e indexadores.
+  
+  Geralmente utilizadas para metodos
+  
+  Uma inteface não fornece implementações dos membros que define - apenas suas "assinaturas".
+  As interfaces podem empregar herança múltipla.
+  
+  interface IControl
+  {
+	  void Paint();
+  }
+  interface IlistBox
+  {
+	  void SetText(string text);
+  }
+  interface IComboBox : IControl, IlistBox {}
+  
+  interface IDataBound
+  {
+	  void Bind(Binder b);
+  }
+  public class EditBox : IComboBox, IDataBound
+  {
+	  public void Paint() { }
+	  public void SetText(string text) { }
+	  public void Bind(Binder b) { }
+  }
+  
+  
+  
+  Enums
+  
+  Um enum é um tipo de valor distinto com um conjunto de constantes nomeados. 
+  Você define enumerações quando precisa definir um tipo que pode ter um conjunto de valores discretos.
+  Eles usam um dos tipos de valor integral como armazenamento subjacente .Eles fornecem significado 
+  semântico aos valores discretos.
+  
+  valores discretos = Ex: Um sistema que tem status de uma nota fiscal (emitida, cancelda, recusada e etc),
+  para cada um desses status, você tem um valor numerico discretos, atribuindo um significado mais semântico.
+
+  enum Cor
+  {
+	  Vermelho,
+	  Verde,
+	  Azul
+  }
+  
+   
+   
+   static void EscreverCor (Cor cor)
+   {
+	   switch (cor)
+	   {
+		   case Cor.Vermelho:
+				Console.WriteLine("Vermelho");
+				break;
+		   case Cor.Verde:
+				Console.WriteLine("Verde")
+				break;
+				
+	   }
+   }
+ 
+
+   Cada tipo de enum possui um tipo integral correspondente chamado tipo subjacente do tipo enum.
+   
+   Um tipo de enumeração que não declara explicitamente um tipo subjacente tem como padrão um tipo subjacente int.
+   
+   
+   enum Alinhamento: sbyte
+   {
+	   Esquerda = -1,
+	   Centro = 0,
+	   Direita = 1
+   }
+   
+   
+   ------------------------------------------------------------------------------------------------------------
+   
+   Uma síntese do que é .NET
+   
+   
+   Revisão
+   
+   Exemplo Prático
+   
+   Aplicação simples, cadastrar e listar alunos , notas e médias geral
+   
+   Links Uteis:
+   
+   Dowenload .NET:
+   https://dotnet.microsoft.com/download
+   
+   Documentação do .NET:
+   https://docs.microsoft.com/pt-br/dotnet/
+   
+   .NET Foundation:
+   https://dotnetfoundation.org
+   
+   Visual Studio:
+   https://visualstudio.microsoft.com/pt-br/vs/
+   
+   Visual Studio Code:
+   https://code.visualstudio.com/
+   
+   Microsoft Azure:
+   https://azure.microsoft.com/pt-br/
+   
+   Mono Project:
+   https://www.mono-project.com
+   
+   Xamarin:
+   https://dotnet.microsoft.com/apps/xamarin
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   
+	
+  
+
+
+	
+	
+
+  
+  
+  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  
+  
+  
+  
+  
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+		
+		
+
+	
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+	
+			
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+		 
+		 
+		 
+		 
+		 
+			
+		 
+	  
+
+  
+ 
+ 
+ 
+ 
+
+
+
+ 		  
+		  

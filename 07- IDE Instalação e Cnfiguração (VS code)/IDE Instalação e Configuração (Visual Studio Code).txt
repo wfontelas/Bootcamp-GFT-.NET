@@ -1,0 +1,58 @@
+IDE Instalação e Configuração (Visual Studio Code) -  by Stephany Nusch - Software enginneer
+
+IDE de desenvolvimento
+
+instalando o VSCode
+
+A IDE mais popular do mercado para desenvolvimento Web
+----------------------------------------------------------------------------------------------------
+
+Recursos Básicos
+
+Ctrl +shift+P 			Mostrar Alguns comandos , por exemplo  digite 'configurar o idioma '
+Crtl +shift+N 			Abrir uma nova janela sem pastas
+Crtl + K e Crtl + S     Mostra a lista de atalhos de comandos para o teclado
+					
+
+Open editor --Acessa as abas do editor abertas
+
+
+
+Source Control - Integração do GitHub
+
+
+
+Setting
+Modificar fontes
+Tab sizes - modificar espaços do tab-identação 
+
+Emmt - Cria a estrutura da linguagem selecionada 
+
+Por exemplo: Vc digita a linguagem Html Quando v escolhe ele te traz a estrutura fechada nas TAGS
+
+----------------------------------------------------------------------------------------------
+Extensões e Temas 
+
+-----------------------------------------------------------------------------------------------
+Terminal e Git
+
+Bash, Shell  e outros dentro do vscode PATH
+
+code . 				-Abre uma nova janela com a pasta selecionada
+code arquivo.html 	-Abre um arquivo especifico dentro de uma pasta
+
+
+outras IDE's populares no mercado 
+
+Atom, Sublime e Brackets
+
+
+
+
+
+
+
+
+
+
+

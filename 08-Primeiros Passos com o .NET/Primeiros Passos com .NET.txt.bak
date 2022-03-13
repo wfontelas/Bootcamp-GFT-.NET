@@ -1,0 +1,155 @@
+Primeiro Passos com  .NET Gabrtiel Faraday -.NET Developer
+
+O que é .NET ?
+
+Conhecendo o Framwework
+
+Microsoft -anos 70 - BASIC
+Microsoft & IBM 80 - DOS
+Microsoft -anos 90 (IDEs e Runtimes ) visual studio
+Microsoft -anos 2000 -Microsoft .NET 
+		  -	2002 - Visual Studio .NET 1.0
+		  - 2005 - Visula Studio 2005 C# 2.0
+		  -	2008 - Visual Studio 2008 .NET C# 3.0
+		  -	2010 - Visual Studio 2010 .NET C# 4.0
+		  -	2011 - Surge Xamarin C# p Android
+		  - 2012 - Visual Studio 2012  .NET 4.5 C# 5.0 lançamento do typescript
+		  -	2014 - cloud  - Criando .NET foundation -open source/ ASP.NET VNEXT
+		  - 2015 - Visual Studio 2015 .NET 4.6  C# 6 Visual Studio Code(VSCode)
+		  - 2016 - Adquire a Xamarin na sua stack .NET Visual Studio for macOS /.NET Core 1.0
+		  -	2017 - Visual Studio 2017 .NET Framework 4.7 .NET Core 2.0 C# 7.0
+		  - 2019 - Visual Studio 2019 .NET Framework 4.8 C# 7.3 .NET Core 3.0 com o C# 8.0
+
+		  - 2020 .NET 5.0
+		  - 2021 .NET 6.0
+
+
+
+
+Como e onde usar .NET 
+
+
+Infrastrutura para desenvolimento de software pela Microsoft
+
+Uma aplicação .NET é desenvolvida para e roda em uma das seguintes implementações do .NET:
+
+.NET Core
+.NET Framework
+ Mono
+ Universal Windows  Plataform (UWP) --XBOX
+ 
+ .NET Standard Library - One Library to rule them all
+ 
+ Como ?
+ 
+ Cada implementação inclui um ou mais .NET Runtimes (ambiente de execução):
+ 
+ .NET Core : Core CLR e CoreRT
+ .NET Framework : CLR
+  Mono : Mono Runtime
+  UWP: .NET Native
+  
+  Linguagens para .NET
+  
+  C# F#	VB.NET
+  
+  " O mercado fala C# "
+  
+  Onde ?
+  
+  .NET 5 - Desktop(WPF, Windows Forms, UWP)
+		 - WEB (ASP.NET)
+		 - Cloud(Azure)
+		 - Mobile(Xamarin)								--------------------------- VS,VSCode,VS for MAC, CLI				
+		 - Gaming(Unity)																  |
+		 - IoT(ARM32, ARM64)														Multiplataforma
+		 - AI(ML.NET,.NET for Apache Spark)
+		 
+ Quem usa .NET
+
+Casas BAhia,Saraiva, Petrobras, Unimed, AACD, GOL, AZUL, Itau, Linx , MAGALU e etc
+
+stackoverflow - site mais acessados do mundo para Developer
+
+Microsoft - criou e utiliza .NET
+
+--------------------------------------------------------------------------------------------------------------------
+
+Iniciando com .NET - Ambiente de Desenvolvimento
+
+Preparando o Ambiente 
+
+Download:
+
+SDK (Software development kit) do .NET Core
+VSCode
+
+
+Conhecendo a CLI do .NET
+
+dotnet --help           - documentação do .NET
+
+dotnet run 				- builda e roda o programa
+
+dotnet new --help      - documentação do comando , no caso "new"
+
+dot nuget -gerenciaor de pacotes similar ao npm (Front-End)
+	tool
+	
+
+Criando uma aplicação console
+
+dotnet new console -h     - documentação do sub-comando "console"
+
+Para ver a ajuda de outros idiomas de modelo (F#, VB), use a opção--language:
+   dotnet new console -h --language F#
+   
+ explorer .       		--- Abre a pasta em janelas no Windows
+
+Extensão .csproj - C Sharp Project
+
+William@DESKTOP-1GPQL6U C:\workspace\Bootcamp GFT Start #3 .NET\8-Primeiros Passos com o .NET\projeto_Primeiro_passo_dotnet\DigitalInnovationOne
+$ code .       --Abrira a pasta no VsCode
+
+dotnet restore        -restaura os pacotes 
+dotnet build		  - compila o programa ,restaura e gera os arquivos de construção do programa (dll,exe, runtime)
+dotnet run			  -executa o programa 
+	
+	
+	
+			
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+		 
+		 
+		 
+		 
+		 
+			
+		 
+	  
+
+  
+ 
+ 
+ 
+ 
+
+
+
+ 		  
+		  

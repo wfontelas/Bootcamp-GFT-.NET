@@ -1,0 +1,15 @@
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\obj\Debug\net6.0\Aula 3.csproj.AssemblyReference.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\obj\Debug\net6.0\Aula 3.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\obj\Debug\net6.0\Aula 3.AssemblyInfoInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\obj\Debug\net6.0\Aula 3.AssemblyInfo.cs
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\obj\Debug\net6.0\Aula 3.csproj.CoreCompileInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\bin\Debug\net6.0\Aula 3.exe
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\bin\Debug\net6.0\Aula 3.deps.json
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\bin\Debug\net6.0\Aula 3.runtimeconfig.json
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\bin\Debug\net6.0\Aula 3.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\bin\Debug\net6.0\ref\Aula 3.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\bin\Debug\net6.0\Aula 3.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\obj\Debug\net6.0\Aula 3.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\obj\Debug\net6.0\ref\Aula 3.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\obj\Debug\net6.0\Aula 3.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\9-Trabalhando com Tipos de Referência e valor em c#\aula 3\obj\Debug\net6.0\Aula 3.genruntimeconfig.cache

@@ -1,0 +1,116 @@
+Criando o ambiente de desenvolvimento [ .NET]
+
+Instalando o .NET
+
+Download .NET Core: https://dotnet.microsoft.com/download
+
+-----------------------------------------------------------------------------
+
+Net Framework, Core e 5
+
+Diferenças entre .NET Framework, Core e 5
+
+.NET Framework - Roda somente em plataformas  Windows
+
+.NET 5.0 e Core - Rodam no windows, linux e macos
+
+
+.NET Framework	-->	.NET Core  -->	.NET Standard -->  .NET 5.0		
+-Ano :2002			-Ano: 2016		 -Bibliotecas 		-Ano:2020
+-Web				-Web			  de classe base	- Plataforma 
+-Windows			-Windows							  unificada
+					-Linux				
+					-macOS	
+					
+-------------------------------------------------------------------------------	
+
+Framework e Runtime
+
+Framework - Caixa de ferramenta, com ferramentas prontas
+
+Ex: Bootstrap - traz botões(componentes) prontos para usar na web
+
+
+Runtime
+
+
+
+Source Code 					  Bytecode				  Native code	
+									 |							|
+									 |							|
+	C#		---C# compiler -->		 |							|
+	
+  VB.NET    -VB.NET compiler->	  CIL code ---CLR ------> Native code
+									 |							
+Other .NET	-Other compiler ->		 |
+Language	
+
+|------------------------------------|-------------------------------|
+		Compile time						Runtime
+
+	console.writeline("Olá Mundo!");		00000101011000001101010	
+	
+	
+	Artigo da microsoft CLR(Common Language Runtime) ---Pesquisar
+	
+----------------------------------------------------------------------------------------
+
+Conhecendo a CLI do .NET
+
+CLI(Command-Line Interface)
+ILC (Interface de Linha de Comando)
+
+CMD
+C:\Windows\system32>dotnet --version
+6.0.101
+
+C:\Windows\system32>dotnet --help
+
+
+dotnet --version  					-verificas a versão
+dotnet --help  	  					-traz todos os comandos 
+dotnet --info     					-informações sobre o dotnet, versões ,SO
+dotnet new 	  						-para criar um novo projeto
+dotnet new --list --tag web   		-lista  filtrando através dass tags , no exemplo web
+dotnet new --help					-traz as extensões que referentes ao sub comando "new"
+dotnet new console - o myApp		-criando um aplicativo do modelo "console" com o nome "myApp"
+cd myApp							-comando para acessar a pasta do aplicativo criado acima
+dotnet run						'	-comando para rodar o aplicativo OBS: dentro da pasta onde o arquivo foi criado
+dotnet build						-comando para compilar o projeto
+dotnet restore						-restaurar projetos, ou preparar os projetos para se precisar restaurar
+
+
+Pesquisar:
+O que é CLI
+Visão geral do CLI do .NET
+
+
+
+----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+				
+
+
+
+					
+
+

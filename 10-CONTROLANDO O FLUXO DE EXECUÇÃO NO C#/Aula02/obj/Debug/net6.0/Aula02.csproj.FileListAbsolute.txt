@@ -1,0 +1,15 @@
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\bin\Debug\net6.0\Aula02.exe
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\bin\Debug\net6.0\Aula02.deps.json
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\bin\Debug\net6.0\Aula02.runtimeconfig.json
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\bin\Debug\net6.0\Aula02.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\bin\Debug\net6.0\ref\Aula02.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\bin\Debug\net6.0\Aula02.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\obj\Debug\net6.0\Aula02.csproj.AssemblyReference.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\obj\Debug\net6.0\Aula02.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\obj\Debug\net6.0\Aula02.AssemblyInfoInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\obj\Debug\net6.0\Aula02.AssemblyInfo.cs
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\obj\Debug\net6.0\Aula02.csproj.CoreCompileInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\obj\Debug\net6.0\Aula02.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\obj\Debug\net6.0\ref\Aula02.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\obj\Debug\net6.0\Aula02.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\Aula02\obj\Debug\net6.0\Aula02.genruntimeconfig.cache

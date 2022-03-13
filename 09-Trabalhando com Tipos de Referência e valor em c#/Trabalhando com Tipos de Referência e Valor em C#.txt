@@ -1,0 +1,313 @@
+
+
+     TRABALHANDO COM TIPOS DE REFERÊNCIA E VALOR EM C#   -- Ricardo Augusto Vicentini -Escovador de bit
+	 
+	
+     Objetivo do Curso
+
+    Entender a diferença entre utilizar variáveis por referência e valor, será fundamental para entender
+ como o compilador executa o código que você escrever. Ou seja, sem entender esse conceito fundamental um
+ desenvolvedor terá muitos problemas para descobrir bugs(Comportamento inmdesejado no código).
+ 
+	  Entendendo o que são Value Types e reference Types
+	  
+	  Commom Type System (CTS)
+	  
+	  Reference types 										Value types		
+																	|
+			System.Object											|
+			System.valuetype --------------------------------Value Types----------------
+			System.Enum	--------------------------------------All enums					|				
+			User-defined classes and interfaces											|
+			System.String														All Structs, incluind 
+			System.Array														 built-in numeric types
+			Etc..																		|
+																				system.Int32
+																				system.boolean	
+																				User-defined structs
+																					etc..
+			
+	
+	Definindo - Value Types
+	
+	- Contém uma INSTÂNCIA do tipo criado
+	- A instância sempre é copiada ao atribuir o valor para outra variável
+	- Alocação na Stack(melhor performace)
+	- O valor inicial é sempre o valor default de cada tipo
+	
+		 Tipos primitivos
+			Valores Numericos
+			- int
+			- decimal
+			-double,etc
+			Boolean(true/false)
+			Char (um caractere apenas)
+			Tuples
+			
+			
+	
+	Definindo - Reference Types
+	
+	- Contém uma REFERÊNCIA para uma instância do tipo criado
+	- A referência nunca muda ao atribuir o valor para outra variável
+	- Na STACK fica um ponteiro e a alocação na HEAP
+	- Seu valor inicial é sempre "Null"
+	- Requer gerenciamento da Memória através do GC (Garbage Collector)
+	
+	   - Classe
+	   - Interface
+	   - Delegate
+	   - Record
+	   - object
+	   - string (É Reference Types pois não tem um limite de caracteres)
+	   
+	   
+	   
+	   
+	   Criando o projeto no VS Code
+	   
+	   
+	   Demo Value types na prática
+	   
+	   Criar uma Console Application que receba um valor inteiro na Main;
+	   
+	   Criar um método void que receba esse inteiro e altere o seu valor para qualquer outro;
+	   
+	   De volta ao Main exiba no terminal o valor alterado;
+	   
+	   
+	   
+	   Demo Reference Types na prática
+	   
+	   Criar uma Console application e uma classe Pessoa com os seguintes atributos "Nome", "Idade" e "Documento".
+	  
+	   No main crie uma instância de Pessoa atribuindo a essas propriedades , seu nome e sua idade;
+
+	   Crie um método void para alterar o Nome do objeto Pessoa;
+	  
+	   De volta ao Main exiba no terminal o nome alterado.
+	  
+	  
+	  
+		Atribuindo Valores e Referências
+		
+		
+		Mostrar na prática diferença entre atribuir uma instância para um Value Type e Reference Type.
+		
+		
+		
+		Strings
+		
+		Criar uma Console Application com um variável do tipo string e atribua seu nome a esta variável;
+		
+		Criar um método void que receba essa variável e altere esse valor;
+		
+		No Main escreva no terminal e valor alterado;
+		
+		
+		
+		Arrays
+		
+		Criar uma Console Application com uma variável do tipo array de int para armazenar os numeros pares
+		de 0 a 8;
+		
+		Criar um metódo void que receba essa variável e altere o conteúdo desse array para que nele fique
+		armazenado o próximo número inteiro ímpar de cada elemento;
+		
+		No Main escreva no terminal todos os números desse array;
+		
+		
+		
+		Desenvolvendo um algoritimo (aplicação dos conceitos)
+		
+		Criar uma Console Application para encontrar um número inteiro em um array;
+		Criar uma Console Application para encontrar uma pessoa em uma Lista de pessoas;
+		
+		------------------------------------------------------------------------------------
+		
+		Aprendendo a utilizar a palavra chave "ref"
+		
+		
+		Revisando o conteúdo
+		
+		"ref" Keyword(palavra-chave)
+		
+		O ref indica que o conteúdo de determinada variável acessado será acessado por referência.
+		E pode ser usada em 4 situações:
+		
+		1-Na declaração dos parâmetros do método e na chamada do método;
+		
+		2- Na declaração do retorno do método;
+		
+		3- No corpo do método para receber um retorno com ref;
+		
+		4- e na declaração de uma Struct.
+		
+		
+		Criando uma Array de Strings
+		
+		Criar um array de string com nomes, permitir que o usuário localize e altere um nome dentro do array
+		
+		Review - Utilizando a palavra-chave "ref" 
+		 - nos parametros de entrada  --Altera os comportamento das variavies que são Value Types
+		 - No retorno dos métodos
+		 
+		
+		
+		-----------------------------------------------------------------------------------------------------
+		
+		Descobrindo o que é um ref struct
+		
+		"ref struct" serve para assegurar que a struct ficará na stack e nunca irá para a Heap.
+		
+		Limitações:
+		
+		-ref struct NÃO PODE :
+			- ser elemento tipado de um array;
+			- ser o tipo em campo em uma classe ou não-ref struct;
+			- implementar interfaces;
+			- ser convertida para Object e nem para Value Type;
+			- ser usada em métodos assíncronos.
+		
+		-Quando usar?
+			- Quando for necessário que a instância da struct não irá acessar a Heap.
+			- Quando for usar tipos do C# que são re struct, como o caso do ref struct Span.
+			
+			
+		
+		Praticando Usando Ref e Struct
+		
+		Vamos contruir uma ref struct e tentar utilizá-la em uma classe .
+		Vamos tentar usar um Span em uma não-ref struct.
+		
+		---------------------------------------------------------------------------------------------------
+		
+		Aprendendo a comparar Valores e Referências
+		
+		Value types compara o valor de uma variavel com a outra
+		
+		Comparação
+		
+		Agora que entendemos a diferença entre Value Types e Reference Types, vamos entender o funcionamento
+		do CLR ao comparar esses tipos.
+		
+		
+				Value Types											Reference Types
+			instância = a instância								referência = a referência
+		-----------------------------------------------------------------------------------------------------
+
+		O que é o Coletor de Lixo do C# e como ele funciona
+		
+		GC - Definição
+		
+		 suporte para a criação e destruição de objetos na Heap - isso é caracteristico de uma linguagem de 
+		programação que tem sua heap gerenciavel - outros tipos de linguagem ex: C e o C++ não tem as Heap gerenciavel
+		não existe GC , essa tarefa tem que ser feita pelo proprio desenvolvedor.
+		
+		GC - Vantagens
+		
+		Segurança - ter um dispositivo preparado para fazer esse trabalho, vc sabe que ele não vai falhar
+		
+		Programador não precisa se preocupar com a liberação de memória
+		
+		Nem com sobrescrita de memória em uso.
+		
+		GC - Desvantagens
+		
+		Performace - porque ele vai ter que ficar ali a todo momento vasculhando a heap, procurando ponteiros
+		na stack
+		
+		Observalidade - Não temos muito conchecimento da forma como ele esta tratando essdas alocações de memorias
+		
+		
+		GC - Arquitetura
+		
+		O GC é dividido em 3 Gerações
+			Gen 1
+				-Objetos de ciclo de vida curto
+			Gen 2
+				-Buffer de alternância entre Gen 1 e Gen 3
+			Gen 3
+				-Objetos com longo ciclo de vida em especial objetos crados como "static"
+				
+				
+		
+
+
+		Revisão geral e conclusão do curso
+		
+		
+		docs nos Slides (vide)
+		
+		https://github.com/ricardovicentini/Reference-Type-And-Value-Type
+		
+		
+		
+		
+
+		
+			
+		
+		
+			
+				
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+	   
+	   
+	   
+	   
+	      
+	   
+	   
+	   
+	   
+	   
+	   
+	
+	
+
+	
+ 
+ 
+
+
+
+

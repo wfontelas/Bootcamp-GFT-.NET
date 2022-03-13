@@ -1,0 +1,661 @@
+Introdução ao GIT e ao GITHUB
+
+Introdução ao GIT
+
+1- Controle de versão
+2-Armazenamento em nuvem
+3-Trabalho em equipe
+4-Melhorar seu código
+5-Reconhecimento
+
+Comando Básicos para um bom desempenho no terminal
+
+CLI(Command line interface)-Terminal
+
+Windows				Linux
+-cd					-cd
+-dir				-ls
+-mkdir				-mkdir
+-del/rmdir			-rem -rf
+
+Windows 10  - Windows subsystem Linux WSL para instalar rode o cmd e rode o comando wsl --install
+
+
+william@DESKTOP-1GPQL6U:/$ sudo su    --Comando no linux para acessar como Root ou administrador
+[sudo] password for william:
+root@DESKTOP-1GPQL6U:/#
+
+
+
+Criar um arquivo dentro do diretorio WINDOWS
+
+C:\workspace>echo hello > hello.txt
+
+C:\workspace>dir
+ O volume na unidade C não tem nome.
+ O Número de Série do Volume é A29B-86C0
+
+ Pasta de C:\workspace
+
+28/01/2022  23:20    <DIR>          .
+28/01/2022  23:20    <DIR>          ..
+28/01/2022  23:20                 8 hello.txt
+               1 arquivo(s)              8 bytes
+               2 pasta(s)   33.745.645.568 bytes disponíveis
+
+C:\workspace>
+
+Criar um arquivo dentro do diretorio LINUX
+
+root@DESKTOP-1GPQL6U:/workspace# echo hello > hello.txt
+root@DESKTOP-1GPQL6U:/workspace# ls
+hello.txt
+root@DESKTOP-1GPQL6U:/workspace#
+
+Apagar um diretorio e todos os arquivos no WINDOWS
+
+C:\>rmdir workspace /S /Q
+
+Apagar um diretorio e todos os arquivos LINUX
+
+root@DESKTOP-1GPQL6U:/# rm -rf workspace/
+
+Instalando o GIT
+
+git-scm.comando
+
+
+Instalar o GIT no LINUX (Debian/Ubuntu)
+
+1-sudo add-apt-repository ppa:git=core/ppa -y
+
+2- sudo apt update
+
+3- sudo apt install git
+
+Para ver a versão do GIT instalada
+
+git --version
+-----------------------------------------------------------------------------------
+Entendendo como o git Funciona por debaixo dos panos
+
+Tópicos fundamentais para entender o funcionamento do GIT
+
+-SHA1 
+
+A sigla SHA significa Secure Hash Algorithm(Algoritmo de Hash Seguro), é um conjunto de funções hash
+criptográficas projetadas pela NSA (Agência de Segurança Nacional dos EUA).
+
+A encriptação gera conjunto de characters indetificador de 40 dígitos.
+
+É uma forma curta de representar um arquivos
+
+EX:
+1-echo "ola Mundo" | openssl sha1
+2-> (stdin)= f9fc856e559b950175f2b7cd7dad61facbe58e7b
+
+Para verificar qual é o hash apó a alteração:
+
+$ openssl sha1 hello.txt 
+ 
+ ele ira trazer o hash atual
+ 
+ William@DESKTOP-1GPQL6U MINGW64 ~/Desktop/GIt
+$ openssl sha1 hello.txt
+SHA1(hello.txt)= 8db7936159736e982ceb6a71461e265249c1292d
+
+William@DESKTOP-1GPQL6U MINGW64 ~/Desktop/GIt
+$ openssl sha1 hello.txt
+SHA1(hello.txt)= f8de49461f1280c424a1d5be511453a6e0cdc22f
+
+Objetos internos do GIT
+
+BLOBS - tem os SHA1 dos arquivos
+
+$ echo "conteudo" | git hash-object --stdin
+fc31e91b26cf85a55e072476de7f263c89260eb1
+
+$ echo -e "conteudo" |openssl sha1
+(stdin)= 65b0d0dda479cc03cce59528e28961e498155f5c
+
+
+$ echo -e "blob 9\0conteudo" | openssl sha1
+(stdin)= fc31e91b26cf85a55e072476de7f263c89260eb1
+
+TREES
+
+As TREES armazenam os blobs - Tem o SHA1 dos blobs
+
+
+COMMITS
+
+Vai juntar tudo
+
+Tree 		s4a5sq1
+parente 	a98acq1
+autor		William@DESKTOP-1GPQL6U
+mensagem 	"inicia..."
+timestamp
+
+O SHA1 desse commit é o hash de toda a essa informação
+
+Por tudo isso GIT é um Sistema distribuido Seguro
+
+
+Chaves SSH e Tokens
+
+Chave SSH
+
+E uma forma de manter uma conexão segura entre duas máquinas
+
+No GiThub - setting>SSh and GPG keys > SSH keys   para autenticar um chave
+
+
+Gerando a chave pelo guibash
+
+$ ssh-keygen -t ed25519 -C williamdevsuporte@gmail.com 
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/William/.ssh/id_ed25519):
+Created directory '/c/Users/William/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Passphrases do not match.  Try again.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/William/.ssh/id_ed25519
+Your public key has been saved in /c/Users/William/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:JGbZgKluPnj28WZYcEnVmKVj82gWeb12NNn17j1P4q8 williamdevsuporte@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|     o...=.     .|
+|    o .+oo..   oo|
+|   . .=.X . . + o|
+|  . .oo+ B   o o |
+| .   o  S . o . .|
+|  o   .o   . . ..|
+| +  .o        ..+|
+|. = .oo      . oo|
+| o o.o.       Eoo|
++----[SHA256]-----+
+
+
+William@DESKTOP-1GPQL6U MINGW64 ~
+$ cd /c/users/William/.ssh/
+
+William@DESKTOP-1GPQL6U MINGW64 /c/users/William/.ssh
+$ ls
+id_ed25519  id_ed25519.pub
+
+William@DESKTOP-1GPQL6U MINGW64 /c/users/William/.ssh                     Chave pública
+$ cat id_ed25519.pub															|
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAHOHWe82XwlE7kSuAoFjUnNsQe60FYjX971VpjFXvtT williamdevsuporte@gmail.com
+
+copiamos essa chave SSH acima e colocamos essa chave no GITHUB 
+
+após isso rodamos o comando abaixo no bash para gerar o ssh agente
+
+William@DESKTOP-1GPQL6U MINGW64 /c/users/William/.ssh
+$ ls
+id_ed25519  id_ed25519.pub
+
+William@DESKTOP-1GPQL6U MINGW64 /c/users/William/.ssh
+$ pwd														(Verifica o caminho onde a chave esta)
+/c/users/William/.ssh
+
+
+William@DESKTOP-1GPQL6U MINGW64 /c/users/William/.ssh
+$ eval $(ssh-agent -s)
+Agent pid 1359
+
+
+William@DESKTOP-1GPQL6U MINGW64 /c/users/William/.ssh
+$ ssh-add id_ed25519 (Esta é a chave privada)
+Enter passphrase for id_ed25519:  (Senha que digitou para a sua chave)
+Identity added: id_ed25519 (williamdevsuporte@gmail.com)
+
+Para testar o ssh 
+
+William@DESKTOP-1GPQL6U MINGW64 /c/workspace/ssh-test
+$ git clone git@github.com:wfontelas/senai-versoes-colaboracoes-presencial.git 				( clonamos um repositório)
+Cloning into 'senai-versoes-colaboracoes-presencial'...
+The authenticity of host 'github.com (20.201.28.151)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+remote: Enumerating objects: 39, done.
+remote: Counting objects: 100% (39/39), done.
+remote: Compressing objects: 100% (35/35), done.
+remote: Total 39 (delta 13), reused 6 (delta 0), pack-reused 0
+Receiving objects: 100% (39/39), 8.10 KiB | 1.62 MiB/s, done.
+Resolving deltas: 100% (13/13), done.
+
+William@DESKTOP-1GPQL6U MINGW64 /c/workspace/ssh-test
+$ ls
+senai-versoes-colaboracoes-presencial/
+
+
+
+No LINUX é praticamente os mesmos comandos
+
+
+Token de acesso pessoal
+
+No GITHUB acesse:
+
+Settings>Developers settings>Personal Acess Tokens   clique em "Generate a personal access token"
+
+ Coloque a Nome dao token e Selecione o tempo de expiração do token , marque o checkbox da opção "repo"
+ e clique no botão Generate Token
+ 
+ Após isso copie o token
+ 
+ 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 (meu token gerado)
+ 
+ Quando vc tem um token de aceeso pessoal vc vai utilizar a opção HTTPS para clonar um repositorio
+ 
+ Após após gerar o token selecione clonar um repositorio , copiando o seu endereço HTTPS e fazendo um git clone
+ 
+ $ git clone https://github.com/wfontelas/study.git
+
+Abrira uma tela de login do git hub, escolha a opção Token e coloque o seu token gerado
+
+---------------------------------------------------------------------------------------------------------------
+
+Primeiros comandos com o GIT
+
+Iniciar o GIT
+
+Criando repositorio
+
+-git init
+-git add
+-git commit
+
+ls -a --Mostrar arquivos ocultos , por exemplo a pasta .git
+
+
+git init - inicar o repsitorio
+
+git config --global user.email "williamdevsuporte@gmail" configura um email
+
+git config --global user.name William
+
+Adicionando um arquivo
+
+ [Markdown  - Typora Editor de texto com extensão .md
+
+Todo arquivo Markdown tem a extensão.MD
+
+Ver tipo de formatação em ajuda Markdown reference]
+
+git add *
+
+git commit -m "inicial"
+
+$ git commit -m "inicial"
+[master (root-commit) 24e9f26] inicial   - começo do SHA1
+ 1 file changed, 38 insertions(+)
+ create mode 100644 strogonoff.md
+ ---------------------------------------------------------------------------------------------------
+ 
+ Ciclo de vida dos arquivos no GIT
+ 
+ git init
+ 
+ Além de criar a pasta .git, ele cria o repositorio
+ 
+ Tracked --Os arquivos que o git tem conhecimento
+ Untracked - Os arquivos que o git não tem conhecimento
+ 
+ Unmodified -- Modified -- Staged
+ Add arquivo -- Edit Arquivo -- "staged" o arquivo (aguardando para ser  commitado)
+ 
+ Arquivo comitado voltas para o o estágio unmodified
+ 
+ 
+ Ex:
+ 
+ Servidor
+ Remote Repository
+ 
+ Ambiente de desenvolvimento
+ Working		Staging		Local
+ Directory		 Area		Repository
+ 
+ 
+ git status -- Monitorar o estágio do(s) arquivo(s)
+ 
+ mkdir receitas  - criar um novo diretorio (pasta)
+ 
+ mv strogonoff.md ./receitas/  - mover um arquivo de um diretorio para outro diretorio
+ 
+ 
+ Abaixo , arquivo que estava comitado e foi movido para um diretorio recem criado
+ 
+ $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    strogonoff.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        receitas/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Abaixo arquivo e pasta  enviado para a area Staged 
+
+$ git add strogonoff.md  receitas/
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    strogonoff.md -> receitas/strogonoff.md
+		
+abaixo vamos comitar os arquio e a pasta		
+		
+$ git commit -m "cria pasta receitas, move arquivo para receitas"
+[master e10aeb6] cria pasta receitas, move arquivo para receitas
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename strogonoff.md => receitas/strogonoff.md (100%)
+ 
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+
+ Criando um arquivo index README.MD
+ 
+ $ echo > README.md     ----para criar um arquivo 
+ 
+ $ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git add *
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   README.md
+		
+$ git commit -m "adiciona index"
+[master ceca1fe] adiciona index
+ 1 file changed, 5 insertions(+)
+ create mode 100644 README.md
+		 
+
+> git add nomeArquivo
+> git add *
+> git add .
+
+> git commit -m "mensagem"
+
+---------------------------------------------------------------------------------------------------
+Trabalhando com o GITHUB
+
+
+Crie uma conta no GITHUB
+
+$ git config --list     ----traz a lista de configurações que esta no git
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.email=williamdevsuporte@gmail.com
+user.name=William
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+
+$ git config --global --unset user.email  			------para resetar  o email
+
+$ git config --global --unset user.name				------para resetar o nome
+
+$ git config --global user.email "williamdevsuporte@gmail.com" -- configurando o email novamente
+
+$ git config --global user.name "William"			----- configurando o nome novamente
+
+
+
+Subindo arquivos para o GITHUB
+
+No GITHUB clique no botão NEW Escolha um nome para o repositorio, escolha a opção público ou privado e clique no
+Botão "Create repository"
+
+Após copie o endereço e suga as etapas
+
+
+abaixo comando para subir os arquivos para o repositorio no GITHUB com o endereço fornecido pleo GITHUB
+
+$ git remote add origin https://github.com/wfontelas/livro-receitas.git
+
+$ git remote -v				----comando para verificar os arquivos que subiram
+
+$ git push origin master    -----comando para subir os arquivos
+
+------------------------------------------------------------------------------------------------
+
+Resolvendo Conflitos
+
+
+Como os conflitos acontecem no GITHUB e como resolvê-los
+
+Conflito de MERGE
+
+$ git pull origin master			---puxar arquivos do repositorio para a máquina para resolver conflitos de merge
+From https://github.com/wfontelas/livro-receitas
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+Clonando um repositorio de terceiros
+
+$ git clone https://github.com/python/cpython.git
+Cloning into 'cpython'...
+remote: Enumerating objects: 874145, done.
+remote: Total 874145 (delta 0), reused 0 (delta 0), pack-reused 874145
+Receiving objects: 100% (874145/874145), 432.61 MiB | 11.63 MiB/s, done.
+Resolving deltas: 100% (693466/693466), done.
+Updating files: 100% (4553/4553), done.
+
+
+$ git remote -v
+origin  https://github.com/python/cpython.git (fetch)
+origin  https://github.com/python/cpython.git (push)
+
+ls -a 				--Ver arquivos ocultos no diretório
+
+
+----------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
