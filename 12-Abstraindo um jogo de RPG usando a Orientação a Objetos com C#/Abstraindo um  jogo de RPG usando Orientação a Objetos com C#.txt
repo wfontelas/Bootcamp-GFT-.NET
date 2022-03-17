@@ -1,0 +1,162 @@
+Abstraindo um Jogo de RPG usando Orientação a Objetos com C#
+
+Apresentação inicial do conteudo
+
+ Quatro Pilares da OO   H.E.P.A
+ 
+ -Abstração
+ -Herança
+ -Encapsulamento     
+ -Polimorfismo
+ 
+ 
+ 
+ A estrutura Básica do projeto
+ 
+ Organizar o projeto dentro de uma pasta com o nome SRC -***Dica***
+ 
+ 
+ 
+ Representando os atributos de um heroi SEM orientação a objetos
+ 
+ using System;
+
+namespace POO
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string nome = "Arus";
+            int level = 12;
+            string tipoHeroi = "Guerreiro";
+
+            Console.WriteLine(nome +" " +level +" "+ tipoHeroi);
+        }
+    }
+}
+
+
+
+	Primeiros passos para pensar orientado a objetos 
+
+	Uma classe é uma forma de um objeto (bolo)
+	
+	
+	
+	
+	Representando os atributos de um heroi COM orientação a objetos
+	
+	
+	Acessando os métodos e propriedades de um objeto
+	
+	
+	
+	
+	Criando o método construtor do herói
+	
+	namespace POO.src.Entities
+{
+    public class Arus
+    {
+        public Arus(string Name, int Level, string Herotype) --Construtor (CTOR) 
+        {
+            this.Name = Name;
+            this.Level = Level;
+            this.HeroType = Herotype;
+        }
+        public string Name;
+        public int Level;
+        public string HeroType;
+    }
+}
+
+
+	
+	Criando o método ToString usando sobrescrita de método
+	
+	Toda Class pode ter propriedades e metodos
+	
+	
+	namespace POO.src.Entities
+{
+    public class Arus
+    {
+        public Arus(string Name, int Level, string Herotype)
+        {
+            this.Name = Name;
+            this.Level = Level;
+            this.HeroType = Herotype;
+        }
+        public string Name;
+        public int Level;
+        public string HeroType;
+
+        public override string ToString()    -Metodo ToString 
+        {
+            return this.Name + " " + this.Level + " " + this.HeroType;
+        }
+
+
+        
+    }
+}
+	
+		Criando múltiplas instâncias a partir de uma mesma classe
+		
+		  {
+        static void Main(string[] args)
+        {
+           Arus hero = new Arus("Arus", 23, "Knight");				---Multiplas instancias
+           Arus Wizard = new Arus("Jennica", 23, "White Wizard");
+
+
+           Console.WriteLine(Wizard.Attack()); ---Novo metodo !"Attack" dentro da class Arus 
+		    
+         
+        }
+    }
+}
+	
+
+		
+	Como abstrair uma classe	
+	
+	"Tudo aquilo que você consegue reutilizar"
+	
+	
+	Entendendo sobre herança na prática
+	
+	Herda o comportamento da classe mãe
+	
+	
+	
+	
+	Usando exemplo de Attack para o conceito de Polimorfismo
+	
+	Tudo aquilo que tem muitas formas
+	
+	
+	
+	Classe abstract é uma abstração do mundo para que outras classes herdem, para depois ter classes especialistas
+	
+	
+	O que é encapsulamento
+	
+	Criar um efeito capsula : facil consumo de algo concetrado **Aspirina  de Gripe*
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+ 
