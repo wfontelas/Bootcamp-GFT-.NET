@@ -1,0 +1,26 @@
+{	
+	"Client":"000001",
+	"Store":"01",
+	"CustomerDelivery":"000001",
+	"DeliveryStore":"01",
+	"PaymentTerms":"000",
+	"MessageForNote":"Mensagem para nota",
+	"Nature":"0000000001",
+	"Items":
+	[
+	  {
+	    "Product":"000000000000001",
+		"SalesQuantity":1,
+		"SalesPrice":100,
+		"Value":100,
+		"InputTypeOutPut":"501"
+	  },
+	  {
+	    "Product":"000000000000002",
+		"SalesQuantity":1,
+		"SalesPrice":100,
+		"Value":100,
+		"InputTypeOutPut":"501"
+	  }
+	]
+}

@@ -1,0 +1,683 @@
+  ***INTRODUÇÃO AO HTTP/HTTPS***
+  
+  O Dev será capaz de aprender a estrutura e funcionamento de protocolo HTTP, assim como o HTTPS. 
+  Assuntos correlatos que formam a base paras completa compreenção do DEV serão abordados.
+  
+  Além disso colocara em prática o acionamento do protocolo atrvés de APIs JAVA.
+  
+ 
+
+ Protocolo HTTP
+  
+  - HyperText Transfer Protocol (HTTP)  Stateless (não armazena estado - dados)
+  
+  - Definido pelos RFCs 1945 e 2116
+
+  - Protocolo de comunicação
+		Rege a estrutura(regras, diretrizes) as mensagens
+  
+  - Browser -> implementa o cliente HTTP   --cliente
+  
+  - Servidor -> host objetos web        --Servidor
+  
+  - Cliente
+	 Mensagens - Request HTTP(objetos web)
+	 
+  - Servidor
+	 Mensagens - Response HTTP(Protocolo TCP)
+	 
+	 
+	Mensagens HTTP
+		
+		Tipos : request & Response
+		
+		
+		Request Estrutura:
+		
+		Texto ASCII
+		
+		Request Line --  Metodo HTTP e a versão (GET)
+								
+		Header Line  -- Primeira Linha: onde esta hospedado o site (URL) 
+						Segunda  Linha: Tipo de conexão
+						Terceira Linha: O agente que realizou o request
+						Quarta 	 Linha: Preferencia de linguagem do cliente
+		
+		Entity body  -- geralmente utilizado para parte de busca (Search fields) OBS: NÃO esta presente quando 
+		utilizamos o metodo GET.
+		
+		
+		Metodos
+		
+		    *GET    -- Solicita um recurso do servidor -EX:objeto Web, umas página, XML, HTML...
+			*HEAD   -- GET sem corpo de resposta (requere metadados geralmente encapsulados no cabeçalho)
+			POST   -- Submete uma entidade a um recurso (Faz com que o servidor aceite todos os dados que estão
+			anexados ao pacote. EX : Cadastro)
+			PUT    -- substituição de recursos pelos dados da requisição(envia um novo estado para o recurso)
+			DELETE -- Remoção de Recurso
+			TRACE  -- Chamada de loop- back a um determinado recurso
+			*OPTION -- Opções de comunicação com recurso (configuração de recurso)
+			CONNECT-- Tunelamento identificado pelo recurso (utiliza o protocolo TLS , de ponto-a-ponto)
+			PATCH  -- Modificação parcial do recurso
+			
+			* Metodos Seguros (Nenhuma alteração de dados no servidor)
+			
+		
+		Response Estrutura:
+
+		Status Line  -- Versão do protocolo e o *Status code(Status da mensagem
+
+		Header Lines -- Tipo de conexão ( Conexão encerrada) 
+						Dados da mensagem : Data, servidor,...
+						content-type: tipo de dado EX: text/html
+		Entity body  --(dados)
+		
+		*Status code 
+					
+					200 OK					-- Request bem sucedida 
+					301 Moved Permanently:  -- Objeto realocado nova URL no campo Location
+					400 Bad Request:		-- Resposta generica - servidor não entendeu a mensagem
+					404 Not Found:			-- O documento solicitado inexistente
+					505 HTTP Version Not
+								Supported:  -- Versão do protocolo não suportada pelo servidor
+								
+					
+		
+
+		COOKIES
+		
+		-RFC 6265
+		
+		-Rastreamento					
+											
+		-Identificação 
+			Restrição ou formecimento      ---USUARIO
+		de funções	
+		
+		
+		Componentes do Cookies
+		
+		-Cookie header line (cabelhaço)
+			Response message
+			Request message
+			
+		-Cookie file
+			Mantido no cliente e servidor
+			
+		-Banco de Dados Back -end
+			Web site
+			
+
+
+	Conceitos básicos de segurança , parte 1 e parte 2
+	
+	Criptografia por chave 
+	
+	Dados ilegiveis + chave 
+	
+	Assimétrica:
+			-Chave Privada 
+				Assinatura -criptografia
+			-Chave pública
+				verificação de autenticidade 	
+			
+	
+	Simétrica :
+			-Chave única privada 
+				Conhecimento prévio da chave
+				Como trasnsferir a chave?
+				
+			Cifra de César - Substituição da letra pela k-ésima do alfabeto  - 	k=[1,26]
+			Ex: Bob, i love you. Alice  = Ere, I oryh brx. Dolfh
+			
+			Tipos:
+				-Cifra de fluxo:
+					Sequência de bits pseudo-aleatório
+					Mapeamento 1 para 1
+					
+				-Cifra de bloco: SSL, PGP, Ipsec(VPN)
+					Blocos de bits
+						K= número de bits
+						EX: k= 64 -Blocos de 64 bits
+					Mapeamento de 1 para 1 	
+					
+				**Verificar Mapeamento por tabela de criptografia de blocos
+				
+				Possiblidades ?
+				
+				Mapeamento por permutação
+				8! (fatorial) mais de 40k possibilidades 
+				
+				E na prática?
+				
+				K> 64
+				Mapeamento por funções 
+				
+				Protocolos desta cifra = DES, AES, 3DES
+				
+	
+	Certificação de chave pública  (certificado digital)
+		
+		O que é certificar uma chave?
+			Comprovar autenticidade 
+			
+		Entidade Certificadora
+			Verificação de identidade 
+			Emissão de certificados
+				Chave única
+				
+		Padrões de autoridades certificadoras
+			IETF - recomendação ITUX.509 - Especificação de um serviço de autenticação e sintaxe de certificados
+			
+			RFC 1422 - Gerenciamento de chaves baseado em CA em emails seguros
+			
+		O simbolo do cadeado no canto da página comprovar que a página esta cripotgrafada e protegida por uma 
+		certificação digital(conexão é segura)
+		
+
+	Protocolo SSL
+
+	Secure	Socket Layer - SSL
+		
+		-Segurança para conexões TCP
+		-Confiabilidade 
+		-Integridade
+		-Autenticidade end-point
+		
+		Versão 3 : Trasnsport Layer Security (TLS) --RFC 4346
+		
+		SSL = HTTPS://
+		
+		Operação SSL :
+		
+		1-Handshake -TCP start -TCP response - TCP Confirmation  SSL -> MS = MS
+		
+		2-Key derivation- SSL hello - Certification(chave pública)
+						MS = Ea = SEK de Alice para Bob -Criptografar
+							 MA = Mac de Alice para Bob -Verificar
+							 Eb = SEK de Bob para Alice
+							 Mb = Mac de Bob para Alice	
+		
+		3-Data transfer - Transferência de dados
+						  Record + Mac
+							Verificação de integridade da mensagem
+							
+	
+	HTTPS 
+	
+	O que é o HTTPS?
+	
+	Segurança na comunicação - HTTP
+		Over TCP
+	
+	Verificação da autenticidade por certificados digitais 	
+		Porta 443
+		
+	
+	Há sites que não utilizam?	https://whynothttps.com (os sites mais utilizados no mundo que não usam https)
+		
+		Maioria dos site utilizam a versão segura
+
+	
+	
+	LGPD - Lei Geral de Proteção de Dados
+			
+		Baseada nas legislações abaixo:	
+		- GDPR - General Data Protection Regulation - legislação Europeia
+		- Legislação do estado da Califórnia - EUA
+		
+	O que a lei protege?
+
+		Dados de identificação dos usuários
+		Dados sensíveis - Religião , Etnia ...
+		Define o tratamento de dados - Diversos tipos de operações
+		Livre conssentimento
+		Direitos do titular das informações
+		Sanções aos que descumprirem as regras
+	
+	Quem deve seguir a lei ?
+	
+		Empresas que precisam manter um BD
+			Funcionários e usuários
+		
+		Devem garantir ao titular sigilo das informações	
+		
+		
+----------------------------------------------------------------------------------------------------------------------		
+----------------------------------------------------------------------------------------------------------------------		
+		
+	API e Padrão REST
+
+	O que é API? 
+	
+	Application Programming Interface?
+	
+	Coleção de métodos disponibilizados por um serviço para interação indireta
+	
+			Cliente   --->	Garçom --->	Chefe de cozinha
+			
+			
+			
+		
+	
+	API JAVA
+	
+	Programação
+	
+	-Rotinas e padrões
+	-Acesso:
+		Sistema ou plataforma web
+	
+	Motivação
+	
+	-Utilização dos serviços da empresa
+	EX:maps	
+	
+	
+	O que é um API em Java?
+	
+	-Recursos disponíveis em uma API padrão JAVA
+	-Programa de suporte
+	-Possui partes funcionais chamadas pacotes(O que nós denominamos bibliotecas)
+	
+	Ex: java.io , java.applet, java.security, java.math
+	
+	
+	Propriedades de uma API
+	
+	-Acesso de dados
+	
+	-Esconder complexidade
+	
+	-Estender funcionalidades
+	
+	-Segurança - 
+					
+	"Se vc não paga por um produto vc é o produto"
+	
+			
+	Padrão REST 
+
+    HTTP
+		Comunicação entre API e Sistema 
+		
+	Regras:
+		Arquitetura REST (GET/POST/PULL/DELETE)
+		
+		REpresentational State Transfer - REST
+	
+          Apresentada por Roy Fielding - 2000
+		
+			-Boas práticas - regras bem definidas
+			-Comunicação entre sistemas
+			-Padrão de linguagem
+			
+	Vantagens da padronização:
+		
+		>Maior comprenção
+		>Redução do esforço
+		>Ganho em Agilidade e > Eficiência >Migração de sistemas
+		
+		-Vantagem - Independência da aplicação
+		
+		
+	Modelo
+	
+		-Client-Server					]
+		-Stateless						|
+		-Cache		                    |
+		-Uniform Interface				| >>>> Constraints
+		-Layered System					|
+		-Code on Demand(Opcional		]	
+		
+		
+		Client-Server
+		
+			-Front x Back
+				>Princípio da separação
+				>Menos complexidade
+				>Organização dos Devs
+				
+				>Portabilidade Interface do usuário
+				>Aumento da escabilidade 
+				>Simplifica os componentes dos servidores
+				
+		Stateless
+			
+			-Request
+				Fornecer completo entendimento para o servidor
+			
+				>Visibilidade
+				>Confiabilidade
+				>Escalabilidade
+			   
+			  Escolha - Tradeoff
+				
+				>Repetição de dados    (por ser Stateless)
+				>Per-interaction overhead
+				>Performace da rede x propriedades 
+		
+		Cache
+			
+			-Objetivo
+				aumentar eficiência da rede
+			-Label requests
+				Cacheable or non-cacheable
+			-Reduz latência e interação
+			
+						
+		Uniform Interface
+			
+			- Diferencial
+				Ênfase de uma interface uniforme entre componentes
+			-Generalidade - principio de eng. de software	
+			
+			-Arquitetura de multiplas restrições
+
+				>Identificação de recursos
+				>Manipulação de recursos
+					representações - ex:verbos HTTP
+				>Auto-descrição
+					processamento da informação
+				>HATEOAS
+					Hypermedia As The Engine Of Application State
+				Ex: métodos HTTPS    	
+				
+				GET http://api.project6.net/users/1
+				
+			-Elemento de dados 
+				Aspecto chave
+				
+				>Estado e elementos de dados
+				
+		
+		Layered System
+
+			-Composição hierárquica de camadas	
+				>Encapsulamento
+				>Proteção de dados
+				
+			-Latência e overhead de dados
+				>Compensado pelo uso de cache
+		
+		
+		Code on Demand (optional Constraint)
+		
+			-Funcionalidade de clientes -> applets ou scripts
+			-Simplificação
+				>redução de features à serem pré-implementadas
+			 
+			  sistema extensível  x diminuição de visibilidade
+		
+
+
+		Por que Utilizar o padrão APIs Restfull
+
+			-Padrão comumente adotado
+			-Conversa bem com o protocolo HTTP
+			-Permite criação de APIs mais eficientes
+			-Foco no Desenvolvimento
+			
+			
+		
+
+	API HTTP -Java
+	
+			
+		-Adicionado à versão 11 do Java
+
+		-Suporte à HTTP/1.1 e HTTP/2.0
+	
+		-Requisições
+		Síncrona e Assíncrona
+		
+	Pacote HTTP
+		
+		-HttpClient						
+		-HttpRequest
+		-HttpResponse	
+		
+						
+								  java.net.http
+									   |				
+			HttpClient		     	HttpRequest				HttpResponse	    								
+				|					   |						  |
+		   .newBuilder()		    .GET()				   HttpClient.send()	
+		  .newHttpClient()	        .POST()					
+								    .HEAD()				(Resultado da solicitação HTTP)
+		(Classe que define			
+		  o cliente HTTP)	    (Classe de solicitações
+								utilização de métodos)
+								
+								
+	HttpClient
+
+					
+	.newHttpClient	- Cria um novo cliente HTTP (Imutavel)	
+	
+	
+															Versão do protocolo 
+	.newBuilder - Define estado e configurações do cliente 	Autenticador
+															timeout
+															
+															
+	.newHttpClient = HttpClient client = HttpClient.newHttpClient();
+	
+	.newBuilder = HttpClient builderClient = HttpClient.newBuilder()
+							.version(HttpClient.Version.HTTP_1_1)
+							.connectTimeout(Duration.ofMinutes(2))
+							.build();
+							
+	
+	HttpRequest
+	
+	-Criado a partir do builder
+	
+	-Métodos que definem os parâmetros de configuração
+	
+	
+	.build() (URI, Método, header, body, Timeout) -Imutavél uma vez setado
+	
+	HEADER				|	Timeout
+	charset:utd-8		|	of.minute()	
+	applicatrion/json	|	of.nanoseconds()
+	text/html			|	of.seconds()
+	
+	
+	HttpRequest request = HttpRequest.newBuilder()
+			.GET
+			.header(name "accept", value: "applicastion/json")
+			.timeout(Duration.ofMinutes(2))
+			.uri(URI.create(URI_JSON_POSTS_URL))
+			.BUILD();
+			
+	public static final String URI_JSON_POSTS_URL = "https//jsonplaceholder.typicode.com/posts";
+	
+		import java.nio.file.Paths; POST
+		import java.time.Duration;  timeout 
+		
+	
+	
+	HttpResponse
+
+	- Classe criada indiretamente 
+	- Retornando como resultado do envio de uma requisição do cliente 
+	
+	- Síncrona e Assíncrona
+	
+		BodyHandelers.ofString() - Trata os bytes da resposta HTTP
+		
+	Síncrona:
+
+	HttpResponse<String> response = client.send(request, Httpresponse.BodyHandlers.ofSttring());
+	
+	System.out.println(response.statusCode());
+	System.out.println(response.body());
+	
+	
+	Assíncrona:
+	
+	secondClient.sendAsync(request, HttpResponse.BodyHandlers.ofString()) CompletableFuture<HttpResponse<String>>
+			.thenApply(HttpResponse::statusCode) CompletableFuture<Integer>
+			.thenAccept(System.out::println) CompletableFuture<Void>
+			.join();
+			
+	
+		
+	Estudo de caso Java versão 11
+
+	-IDE - Intellig
+	
+	-Requisições HTTP - do tipo GET() e POST()
+	
+	-URIs - https://jsonplaceholder.typicode.posts
+			http://httpbin.org/forms/post
+			http://httpbin.org/get
+			
+	
+		Exemplo 1 - Método: GET Content-type/html
+		
+		Exemplo 2 - Método: POST  - 405 - Method Not Allowed
+		
+----------------------------------------------------------------------------------------------------------------------
+
+	Conclusão do Curso
+
+		HTTP e HTTPS
+		
+		-Kurose - Redes de Computadores e a internet -cap 2 - Camada de Aplicação 
+		
+		-Tanenbaum - Redes de Computadores - cap 7 -Camada de aplicação
+		
+		-Canal Simplificando Redes - Youtube
+		
+		-Repostas HTTP - status code - https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status
+		
+		-Stackoverflow - https://stackoverflow.com.questions/51907641/java-11-http-client-asynchronous-execution
+		
+		-API Java- HTTP - https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/package-summary.html
+		
+		-Padrão REST - https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+			
+			
+			
+			
+	
+	
+		
+		
+		
+	
+	
+		
+	
+	
+	
+	
+	
+
+		
+	
+															
+	
+	
+															
+	
+	
+
+
+								
+				
+				
+				
+				
+					
+					
+			
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+			
+			
+				
+				
+						
+						
+				
+				
+			
+				
+				
+	
+	
+
+	
+
+		
+		
+								
+								
+		
+			
+		
+
+		
+		
+		
+			
+			
+			
+			
+			
+			
+		
+			
+						
+						
+		
+		
+		
+		
+	 
+	 
+	 
+	 
+	 
+	 
+  
+						'		
+  
+  
+  
