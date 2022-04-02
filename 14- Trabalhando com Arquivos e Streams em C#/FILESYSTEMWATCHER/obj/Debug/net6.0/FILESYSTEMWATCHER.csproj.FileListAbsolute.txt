@@ -1,0 +1,15 @@
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\obj\Debug\net6.0\FILESYSTEMWATCHER.csproj.AssemblyReference.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\obj\Debug\net6.0\FILESYSTEMWATCHER.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\obj\Debug\net6.0\FILESYSTEMWATCHER.AssemblyInfoInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\obj\Debug\net6.0\FILESYSTEMWATCHER.AssemblyInfo.cs
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\obj\Debug\net6.0\FILESYSTEMWATCHER.csproj.CoreCompileInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\bin\Debug\net6.0\FILESYSTEMWATCHER.exe
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\bin\Debug\net6.0\FILESYSTEMWATCHER.deps.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\bin\Debug\net6.0\FILESYSTEMWATCHER.runtimeconfig.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\bin\Debug\net6.0\FILESYSTEMWATCHER.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\bin\Debug\net6.0\ref\FILESYSTEMWATCHER.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\bin\Debug\net6.0\FILESYSTEMWATCHER.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\obj\Debug\net6.0\FILESYSTEMWATCHER.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\obj\Debug\net6.0\ref\FILESYSTEMWATCHER.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\obj\Debug\net6.0\FILESYSTEMWATCHER.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\FILESYSTEMWATCHER\obj\Debug\net6.0\FILESYSTEMWATCHER.genruntimeconfig.cache

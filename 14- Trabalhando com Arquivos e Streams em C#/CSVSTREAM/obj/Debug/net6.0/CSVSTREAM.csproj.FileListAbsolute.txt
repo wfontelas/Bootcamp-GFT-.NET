@@ -1,0 +1,15 @@
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\bin\Debug\net6.0\CSVSTREAM.exe
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\bin\Debug\net6.0\CSVSTREAM.deps.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\bin\Debug\net6.0\CSVSTREAM.runtimeconfig.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\bin\Debug\net6.0\CSVSTREAM.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\bin\Debug\net6.0\ref\CSVSTREAM.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\bin\Debug\net6.0\CSVSTREAM.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\obj\Debug\net6.0\CSVSTREAM.csproj.AssemblyReference.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\obj\Debug\net6.0\CSVSTREAM.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\obj\Debug\net6.0\CSVSTREAM.AssemblyInfoInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\obj\Debug\net6.0\CSVSTREAM.AssemblyInfo.cs
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\obj\Debug\net6.0\CSVSTREAM.csproj.CoreCompileInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\obj\Debug\net6.0\CSVSTREAM.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\obj\Debug\net6.0\ref\CSVSTREAM.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\obj\Debug\net6.0\CSVSTREAM.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVSTREAM\obj\Debug\net6.0\CSVSTREAM.genruntimeconfig.cache

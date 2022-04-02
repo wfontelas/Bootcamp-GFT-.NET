@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\14- Trabalhando com Arquivos e Streams em C#\\STRINGREADER\\STRINGREADER.csproj": {}
+  },
+  "projects": {
+    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\14- Trabalhando com Arquivos e Streams em C#\\STRINGREADER\\STRINGREADER.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\14- Trabalhando com Arquivos e Streams em C#\\STRINGREADER\\STRINGREADER.csproj",
+        "projectName": "STRINGREADER",
+        "projectPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\14- Trabalhando com Arquivos e Streams em C#\\STRINGREADER\\STRINGREADER.csproj",
+        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
+        "outputPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\14- Trabalhando com Arquivos e Streams em C#\\STRINGREADER\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

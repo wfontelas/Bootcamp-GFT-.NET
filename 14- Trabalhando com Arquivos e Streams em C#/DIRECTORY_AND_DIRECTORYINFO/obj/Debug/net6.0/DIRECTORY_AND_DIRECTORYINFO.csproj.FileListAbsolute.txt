@@ -1,0 +1,15 @@
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\bin\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.exe
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\bin\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.deps.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\bin\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.runtimeconfig.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\bin\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\bin\Debug\net6.0\ref\DIRECTORY_AND_DIRECTORYINFO.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\bin\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\obj\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.csproj.AssemblyReference.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\obj\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\obj\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.AssemblyInfoInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\obj\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.AssemblyInfo.cs
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\obj\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.csproj.CoreCompileInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\obj\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\obj\Debug\net6.0\ref\DIRECTORY_AND_DIRECTORYINFO.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\obj\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\DIRECTORY_AND_DIRECTORYINFO\obj\Debug\net6.0\DIRECTORY_AND_DIRECTORYINFO.genruntimeconfig.cache

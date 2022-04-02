@@ -1,0 +1,17 @@
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\bin\Debug\net6.0\ProjetoCsvHelper.exe
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\bin\Debug\net6.0\ProjetoCsvHelper.deps.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\bin\Debug\net6.0\ProjetoCsvHelper.runtimeconfig.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\bin\Debug\net6.0\ProjetoCsvHelper.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\bin\Debug\net6.0\ref\ProjetoCsvHelper.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\bin\Debug\net6.0\ProjetoCsvHelper.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\bin\Debug\net6.0\CsvHelper.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\obj\Debug\net6.0\ProjetoCsvHelper.csproj.AssemblyReference.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\obj\Debug\net6.0\ProjetoCsvHelper.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\obj\Debug\net6.0\ProjetoCsvHelper.AssemblyInfoInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\obj\Debug\net6.0\ProjetoCsvHelper.AssemblyInfo.cs
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\obj\Debug\net6.0\ProjetoCsvHelper.csproj.CoreCompileInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\obj\Debug\net6.0\ProjetoCsvHelper.csproj.CopyComplete
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\obj\Debug\net6.0\ProjetoCsvHelper.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\obj\Debug\net6.0\ref\ProjetoCsvHelper.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\obj\Debug\net6.0\ProjetoCsvHelper.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\CSVHELPER\obj\Debug\net6.0\ProjetoCsvHelper.genruntimeconfig.cache

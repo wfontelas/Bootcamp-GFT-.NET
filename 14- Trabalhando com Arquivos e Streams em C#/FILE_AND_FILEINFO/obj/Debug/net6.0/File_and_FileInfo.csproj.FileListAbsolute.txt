@@ -1,0 +1,15 @@
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\bin\Debug\net6.0\File_and_FileInfo.exe
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\bin\Debug\net6.0\File_and_FileInfo.deps.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\bin\Debug\net6.0\File_and_FileInfo.runtimeconfig.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\bin\Debug\net6.0\File_and_FileInfo.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\bin\Debug\net6.0\ref\File_and_FileInfo.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\bin\Debug\net6.0\File_and_FileInfo.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\obj\Debug\net6.0\File_and_FileInfo.csproj.AssemblyReference.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\obj\Debug\net6.0\File_and_FileInfo.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\obj\Debug\net6.0\File_and_FileInfo.AssemblyInfoInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\obj\Debug\net6.0\File_and_FileInfo.AssemblyInfo.cs
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\obj\Debug\net6.0\File_and_FileInfo.csproj.CoreCompileInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\obj\Debug\net6.0\File_and_FileInfo.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\obj\Debug\net6.0\ref\File_and_FileInfo.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\obj\Debug\net6.0\File_and_FileInfo.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trablahando com Arquivos e Streams em C#\FILE_AND_FILEINFO\obj\Debug\net6.0\File_and_FileInfo.genruntimeconfig.cache

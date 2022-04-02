@@ -1,0 +1,15 @@
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\bin\Debug\net6.0\STRINGREADER.exe
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\bin\Debug\net6.0\STRINGREADER.deps.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\bin\Debug\net6.0\STRINGREADER.runtimeconfig.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\bin\Debug\net6.0\STRINGREADER.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\bin\Debug\net6.0\ref\STRINGREADER.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\bin\Debug\net6.0\STRINGREADER.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\obj\Debug\net6.0\STRINGREADER.csproj.AssemblyReference.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\obj\Debug\net6.0\STRINGREADER.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\obj\Debug\net6.0\STRINGREADER.AssemblyInfoInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\obj\Debug\net6.0\STRINGREADER.AssemblyInfo.cs
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\obj\Debug\net6.0\STRINGREADER.csproj.CoreCompileInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\obj\Debug\net6.0\STRINGREADER.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\obj\Debug\net6.0\ref\STRINGREADER.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\obj\Debug\net6.0\STRINGREADER.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGREADER\obj\Debug\net6.0\STRINGREADER.genruntimeconfig.cache

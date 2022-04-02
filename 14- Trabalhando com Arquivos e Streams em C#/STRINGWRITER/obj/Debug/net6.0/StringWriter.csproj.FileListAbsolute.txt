@@ -1,0 +1,15 @@
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\bin\Debug\net6.0\StringWriter.exe
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\bin\Debug\net6.0\StringWriter.deps.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\bin\Debug\net6.0\StringWriter.runtimeconfig.json
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\bin\Debug\net6.0\StringWriter.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\bin\Debug\net6.0\ref\StringWriter.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\bin\Debug\net6.0\StringWriter.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\obj\Debug\net6.0\StringWriter.csproj.AssemblyReference.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\obj\Debug\net6.0\StringWriter.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\obj\Debug\net6.0\StringWriter.AssemblyInfoInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\obj\Debug\net6.0\StringWriter.AssemblyInfo.cs
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\obj\Debug\net6.0\StringWriter.csproj.CoreCompileInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\obj\Debug\net6.0\StringWriter.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\obj\Debug\net6.0\ref\StringWriter.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\obj\Debug\net6.0\StringWriter.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\14- Trabalhando com Arquivos e Streams em C#\STRINGWRITER\obj\Debug\net6.0\StringWriter.genruntimeconfig.cache

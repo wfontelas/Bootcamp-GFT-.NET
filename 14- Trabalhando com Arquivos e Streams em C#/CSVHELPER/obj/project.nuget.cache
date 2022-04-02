@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "falemSpJeBGA0zV1Oej8xykTTC9Yl9idHWfYIvZFP2sSIKGP6xttJNQ1YdckARVKcLqlqXEZPATl6Ketr6JMtw==",
+  "success": true,
+  "projectFilePath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\14- Trabalhando com Arquivos e Streams em C#\\CSVHELPER\\ProjetoCsvHelper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\William\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}
