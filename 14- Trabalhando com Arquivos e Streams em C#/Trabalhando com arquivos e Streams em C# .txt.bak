@@ -1,0 +1,161 @@
+	TRABALHANDO COM ARQUIVOS E STREAMS EM C#
+	
+	Introdução e Teoria System IO
+	
+	 Objetivos do curso
+	
+	 - Aprender como mainuplar arquivos e pastas;
+	 - Como navegar pela estrutura de diretórios do SO;
+	 - Modificar arquivos existentes;
+	 - Criar novos arquivos em memória e salvá-los;
+	 - Diferente t´cnicas de importação de dados;
+	 - Criar, Validar e conumir arquivos CSV;
+	
+	 Namespace System.IO
+	 
+	 Namespace que agrega um conjunto de classes, estruturas, enumeradores e delegates,relativos a operações
+	 de Entrada e Saída de dados (Input/Output).
+	 
+	 Prinicpais Classes
+	 
+	 - File e Fileinfo - fornece suporte para criar, apagar, mover e abrir arquivos de forma individual
+	 
+	 - Directory e DirectoryInfo - fornce suporte para criar, mover e percorrer diretórios e subdiretórios
+	 
+	 - FileSystemWatcher - Monitora mudança no sistema de arquivos , através de disparo de eventos quando
+	 um arquivo ou diretório muda.
+	 
+	 - FileStreams, MemoryStream, StreamReader
+	 
+	 Classe File e FileInfo
+		
+		Podemos realizar operações comuns:
+		Criar, Abrir, Deletar, Copiar , Mover, Renomear
+		
+		Podemos alterar permissões , nível de acesso e modo de criação/abertura, através dos enumeradores:
+		 - FileAcess
+		 - FileShare
+		 - FileMode
+		 
+	 Classe Directory e DirectoryInfo
+	 
+		Semelhante a classe File, podemos realizar operações tais como, criar , mover , renomear, excluir e 
+		enumerar diretórios e subdiretórios
+		
+		Propriedades:
+		
+		-Exists - Booean que indica se o diretório existe
+		
+		-Name - Nome do diretório, e para obter o caminho "Path" Fullname
+		
+		-Parent - Retorna o diretório Pai, pode retornar null se estivermos em uma pasta raiz "root"
+		
+		-Root - retorna uma instância de DirectoryInfo que representa o diretório raiz
+		
+		----------------------------------------------------------------------------------------------------
+		
+		Demos Criar Arquivo -Tratamento de erros - Diretórios - File Move Copy - DirectoryInfo -FileInfo
+		-----------------------------------------------------------------------------------------------------
+		-----------------------------------------------------------------------------------------------------
+		
+	FileSystemWatcher
+		
+		Teoria
+			
+			Utilização - Permite monitorar eventos de modificação em diretórios e arquivos, através do
+			disparo de eventos
+			
+			Eventos:
+			 
+			 -OnChanged
+			 -OnCreated
+			 -OnDeleted
+			 -OnRenamed
+			 -OnError
+			 
+			Filter - Podemos indicar nesse filtro a quais arquivos ou extensões queremos monitorar
+
+		
+		--------------------------------------------------------------------------------------------------
+
+		Demos
+		
+		--------------------------------------------------------------------------------------------------
+	---------------------------------------------------------------------------------------------------------
+
+	Lendo e escrevendo arquivos com Streams
+
+		
+	   stringWriterReader - teoria
+
+		Definição
+		
+		Stream é uma classe abstrata que fornece uma visão genérica de uma sequência de bytes.(byte array)
+		
+		Existe uma grande vantagem de se utilizar Streams, pois os dados são escritos, lidos ou 
+		modificados através de um Buffer.
+		
+		
+		Buffer
+		
+		Espécie de reservatório onde podemos armazenar uma grande quantidade de dados em pequenos pedaços.
+		O famoso dividr para conquistar.
+		
+	--------------------------------------------------------------------------------------------------------------
+	--------------------------------------------------------------------------------------------------------------
+
+		Importar dados
+		
+		Importação Arquivos - teoria
+		
+		Necessidade 
+		
+		 Sistemas precisam se comunicar e isso pode ocorrer de diversas formas, como por exemplo: APIs Rest, Mensageria 
+		e até mesmo troca de arquivo.
+		
+		Formatos
+		
+		O formato mais utilizado é o Json(Java Script Object Notation), mas temos outros como : XML, Positionl, Tab
+		Delimited e CSV.
+		
+		Comma- separeted Values
+		
+	     - Os dados são separados por v´rgula;
+		 - Podem ou não conter aspas para ajudar na identificação do formato contido em cada coluna cabeçalho;
+		 - Podem ou não possuir cabeçalho;
+		 - Podem utilizar outro tipo de delimitador;
+		 
+		 Demos
+		 
+		 Escrever arquivos CSV utilizando StreamWriter
+		 Ler arquivos CSV utilizando StreamReader
+		 Tratamento de falhas
+		 Lidar com arquivos grandes
+		 biblioteca csvHelper
+		 
+		 
+
+			
+		
+		
+		
+		
+		
+		
+		
+
+				
+
+			 
+	
+	
+	
+		
+		
+		
+		
+		
+		
+	 
+	 
+	 
