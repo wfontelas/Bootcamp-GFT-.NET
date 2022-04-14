@@ -1,0 +1,90 @@
+CONSTRUTORES, PROPRIEDADES, DELEGATES E EVENTOS EM .NET - Leonardo Buta
+
+	Introdução
+	
+	Objetivo do Curso
+	
+	Apresentar como funciona um construtor , seu uso e funcionalidads, tipos e modos de usar na linguagem C#.
+	Apresentar também delgates e eventos.
+	
+	Iniciando um projeto
+	
+	dotnet new sln --name ExemploSolution // cria um arquivo de Solução
+
+	dotnet new console --name ExemploConstrutores // arquivo de criação do projeto
+	
+	dotnet sln add ExemploConstrutores/ExemploConstrutores.csproj // Adiciona o projeto dentro da solution
+	
+	-------------------------------------------------------------------------------------------------------------
+	
+	Construtores
+	
+	 -Geralmente o construtor tem o mesmo nome da Classe e não recebe retorno
+	 -Uma classe pode ter vários construtores 
+	 -Toda classe tem um construtor padrão sem parametros () OBS: Quando vc defina um construtor ele passa a ser
+	 o construtor padrão.
+	 
+	 
+	 Construtor privado para evitar uma instancia de sua classe, ele não pode ser modificado (tanto o construtor 
+	 ou a variavel) fora da sua classe .
+	 
+	 
+	 ------------------------------------------------------------------------------------------------------------
+	 Getters e Setters
+	 
+	 O Get e Set uma maneira de atribuir um valor para o objeto ou variavel de uma maneira controlada
+	 
+	 O GET obtem o valor
+	 O SET atribuir um valor
+	 
+	 ------------------------------------------------------------------------------------------------------------
+	 
+	 Modificadores
+	 
+	 Introdução readonly
+	 
+	 O modificadoer readonly (somente leitura) bloqueia um campo contra alterações que não sejam em sua
+	 inicialização ou pelo próprio construtor.
+	 
+	 Introdução constante
+	 
+	 Uma constante representa um valor que somente pode ser atribuído no momento de sua inicialização, e
+	 não pode ser modificado posteriormente.
+	 
+	 --------------------------------------------------------------------------------------------------
+	 Delegates
+	 
+	 Introdução delegate
+	 
+	 Um delegate é uma maneira de passar um método como referência, podendo ser usado como um callback,
+	 aceitando qualquer método que contenha a mesma assinatura.
+	 ------------------------------------------------------------------------------------------------------
+	 Eventos
+	 
+	 Introdução eventos
+	 
+	 Eventos é um mecanismo de comunicação entre objetos, onde existe um publisher, que realiza o evento e
+	 subscriber, que se inscreve em um evento.
+	 
+	
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+		
+	 
+	 
+	 
+	 
+	 
+	 
+	
+	
