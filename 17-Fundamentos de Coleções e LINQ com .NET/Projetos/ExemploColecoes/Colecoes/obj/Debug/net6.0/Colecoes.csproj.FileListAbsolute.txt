@@ -1,0 +1,15 @@
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\bin\Debug\net6.0\Colecoes.exe
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\bin\Debug\net6.0\Colecoes.deps.json
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\bin\Debug\net6.0\Colecoes.runtimeconfig.json
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\bin\Debug\net6.0\Colecoes.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\bin\Debug\net6.0\ref\Colecoes.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\bin\Debug\net6.0\Colecoes.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\obj\Debug\net6.0\Colecoes.csproj.AssemblyReference.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\obj\Debug\net6.0\Colecoes.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\obj\Debug\net6.0\Colecoes.AssemblyInfoInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\obj\Debug\net6.0\Colecoes.AssemblyInfo.cs
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\obj\Debug\net6.0\Colecoes.csproj.CoreCompileInputs.cache
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\obj\Debug\net6.0\Colecoes.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\obj\Debug\net6.0\ref\Colecoes.dll
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\obj\Debug\net6.0\Colecoes.pdb
+C:\workspace\Bootcamp GFT Start #3 .NET\17-Fundamentos de Coleções e LINQ com .NET\Projetos\ExemploColecoes\Colecoes\obj\Debug\net6.0\Colecoes.genruntimeconfig.cache
