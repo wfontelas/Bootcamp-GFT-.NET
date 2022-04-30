@@ -1,3 +1,15 @@
 Fundamentos de Coleções e LINQ com .NET
 
+Objetivos do curso
+
+Apresentar os principais tipos de coleções da linguagem C#, sua utilidades e aplicações para a 
+manipulação de dados.
+
+Arrays 
+
+Array Multidimensional = Matriz
+
+EX:
+int[,] array = new int [4,2];
+onde 4 é o numero de linhas e 2 o numero de colunas
 

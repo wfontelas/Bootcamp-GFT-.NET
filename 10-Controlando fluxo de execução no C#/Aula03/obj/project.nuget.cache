@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r36u7MdH04An8+70NQPzIXKVmCfKMSIIw31VFjKx6ruDL6rGUPz/cOBWjK0AQoqWIyYwqeZUpKcrrJ2q8q+tkA==",
+  "dgSpecHash": "mDRvXUbz21AkiJMM7lS1HdsPPYum3FUsI3pt/F22+FMKST06VIRcJAt5xf22N4NEvTq14ohm+9Pk4JdTLQo2Nw==",
   "success": true,
-  "projectFilePath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\\Aula03\\Aula03.csproj",
+  "projectFilePath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\10-Controlando fluxo de execução no C#\\Aula03\\Aula03.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

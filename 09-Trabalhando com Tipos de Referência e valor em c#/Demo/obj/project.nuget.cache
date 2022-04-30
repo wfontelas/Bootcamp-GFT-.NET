@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1ZZvESAYW0FXuDDoDTDuLQYSN9QX1P8KyIeEimkV57ESnlwLnAUaWMtDrGEyE7Y2HUMAcm1Tpdo+HTNe9PULEw==",
+  "dgSpecHash": "M9oSwVvTKOiq98NGaIFM+dRUK/v5l/BULo8lMVhH8b+map/q2rCvHztfAxK71dSiNiQLeCoAnIHThdpwTrjZTQ==",
   "success": true,
-  "projectFilePath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\9-Trabalhando com Tipos de Referência e valor em c#\\demo\\Demos.csproj",
+  "projectFilePath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\09-Trabalhando com Tipos de Referência e valor em c#\\Demo\\Demos.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

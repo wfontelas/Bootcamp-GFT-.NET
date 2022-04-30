@@ -1,4 +1,4 @@
-﻿static void DEmoWhile()
+﻿static void DemoWhile()
 {
   Boolean condicao = true;
   int valor;

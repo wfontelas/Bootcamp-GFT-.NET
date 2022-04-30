@@ -13,3 +13,102 @@ EX:
 int[,] array = new int [4,2];
 onde 4 é o numero de linhas e 2 o numero de colunas
 
+o valor do array é n = -1
+
+
+Criando um projeto
+
+***A Solution serve para armazenar um ou mais projetos*****
+
+dotnet new sln --name Colecoes  //Criando a solution
+
+dotnet new console --nam Colecoes //Criando o projeto do tipo console
+
+dotnet sln add Colecoes/Colecoes.csproj //colando o projeto na solution
+
+
+
+Manipulando Arrays
+
+Sorting_algorithm (pesquisar para ver os tipos de algoritimos de ordenação)
+
+
+Bubble sort
+
+Compara o elemento atual com o proximo, se o elemento de proximo for menor que o atual ele fará a troca,vai fazendo
+isso através de repetição até o final do seu array.
+Bubble sort - visualgo.net/en/sorting - para ver como o bubble sort funcionam na hora de ordenar um vetor(array)
+
+
+Classe Array
+
+Quando trabalhamos com Array, trabalhamos com muito baixo nivel, precisamos escrever uma boa quantidade de código para
+ter nosso comportamento desejado.
+Para ordenar seja pelo metodo Bubble sort, escrevemos uma boa parte do nosso código.Para outras operações de copiar
+o Array , encontrar um elemento no Array , vc pode imaginar que vamos sempre trabalhar com o "for"  ou "foreach", 
+porque precisamos sempre percorrer nosso Array.
+No C# existe uma classe que chama Array , que pertence ao namespace system, e ela oferece diversos metodos que vão 
+facilitar para que vc possa trabalhar de uma maneira mais fácil com Arrays.
+
+--------------------------------------------------------------------------------------------------------------------
+
+ Coleções Genéricas
+
+ São classes de coleções que agrupam valores , e essas classes são padronizadas para  as operações mais comuns, como:
+ 
+ - Ordenação
+ - Obter valor por índice
+ - Obter valor com expressões
+ - Trabalhar com tamanhos dinâmicos
+ 
+ Em uma lista ou coleção generica vc não precisa se preocupar com o tamanho dela, apesar de uma lista trabalhar 
+ internamente com o array, ela é como se fosse uma abstração disso , uma interface, e a manipulação interna do array 
+ dela , vc não precisa se preocupar, então vc não precisa prevêr o tamanho da sua lista , se vai comportar ou não 
+ determinados elementos, a lista faz toda essa abstração para vc .
+ 
+ System.Collections.Generic
+ 
+ ------------------------------------------------------------------------------------------------------------------
+ 
+ Coleções específicas
+ 
+ Queue(Fila):Obdece a ordem FIFO(First In First Out)
+ Stack(Pilha):Obdece a ordem LIFO(Last In First Out)
+ 
+ ------------------------------------------------------------------------------------------------------------------
+ Dicionário
+ 
+ É um tipo de coleção de chave e valor
+ ------------------------------------------------------------------------------------------------------------------
+ 
+ Operações LINQ - Language-Integrated Query 
+ 
+ recurso presente desde 2008 no C#
+ 
+ Facilita o trabalho com Coleções
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+

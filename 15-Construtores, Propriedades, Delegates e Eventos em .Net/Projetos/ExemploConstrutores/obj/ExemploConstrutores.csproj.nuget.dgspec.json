@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\Construtores, Propriedades, Delegates e Eventos em .Net\\Projetos\\ExemploConstrutores\\ExemploConstrutores.csproj": {}
+    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\15-Construtores, Propriedades, Delegates e Eventos em .Net\\Projetos\\ExemploConstrutores\\ExemploConstrutores.csproj": {}
   },
   "projects": {
-    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\Construtores, Propriedades, Delegates e Eventos em .Net\\Projetos\\ExemploConstrutores\\ExemploConstrutores.csproj": {
+    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\15-Construtores, Propriedades, Delegates e Eventos em .Net\\Projetos\\ExemploConstrutores\\ExemploConstrutores.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\Construtores, Propriedades, Delegates e Eventos em .Net\\Projetos\\ExemploConstrutores\\ExemploConstrutores.csproj",
+        "projectUniqueName": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\15-Construtores, Propriedades, Delegates e Eventos em .Net\\Projetos\\ExemploConstrutores\\ExemploConstrutores.csproj",
         "projectName": "ExemploConstrutores",
-        "projectPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\Construtores, Propriedades, Delegates e Eventos em .Net\\Projetos\\ExemploConstrutores\\ExemploConstrutores.csproj",
+        "projectPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\15-Construtores, Propriedades, Delegates e Eventos em .Net\\Projetos\\ExemploConstrutores\\ExemploConstrutores.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\Construtores, Propriedades, Delegates e Eventos em .Net\\Projetos\\ExemploConstrutores\\obj\\",
+        "outputPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\15-Construtores, Propriedades, Delegates e Eventos em .Net\\Projetos\\ExemploConstrutores\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }

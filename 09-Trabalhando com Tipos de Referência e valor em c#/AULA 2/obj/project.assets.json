@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\9-Trabalhando com Tipos de Referência e valor em c#\\AULA 2\\AULA 2.csproj",
+      "projectUniqueName": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\09-Trabalhando com Tipos de Referência e valor em c#\\AULA 2\\AULA 2.csproj",
       "projectName": "AULA 2",
-      "projectPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\9-Trabalhando com Tipos de Referência e valor em c#\\AULA 2\\AULA 2.csproj",
+      "projectPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\09-Trabalhando com Tipos de Referência e valor em c#\\AULA 2\\AULA 2.csproj",
       "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-      "outputPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\9-Trabalhando com Tipos de Referência e valor em c#\\AULA 2\\obj\\",
+      "outputPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\09-Trabalhando com Tipos de Referência e valor em c#\\AULA 2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }

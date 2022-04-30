@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\\Aula01\\Aula01.csproj",
+      "projectUniqueName": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\10-Controlando fluxo de execução no C#\\Aula01\\Aula01.csproj",
       "projectName": "Aula01",
-      "projectPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\\Aula01\\Aula01.csproj",
+      "projectPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\10-Controlando fluxo de execução no C#\\Aula01\\Aula01.csproj",
       "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-      "outputPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\10-CONTROLANDO O FLUXO DE EXECUÇÃO NO C#\\Aula01\\obj\\",
+      "outputPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\10-Controlando fluxo de execução no C#\\Aula01\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\16-Programando com Orientação a Objeto com C#\\Projeto\\POO\\ExemploPOO\\ExemploPOO.csproj": {}
+    "c:\\workspace\\Bootcamp GFT Start #3 .NET\\16-Programando com Orientação a Objeto com C#\\Projeto\\POO\\ExemploPOO\\ExemploPOO.csproj": {}
   },
   "projects": {
-    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\16-Programando com Orientação a Objeto com C#\\Projeto\\POO\\ExemploPOO\\ExemploPOO.csproj": {
+    "c:\\workspace\\Bootcamp GFT Start #3 .NET\\16-Programando com Orientação a Objeto com C#\\Projeto\\POO\\ExemploPOO\\ExemploPOO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\16-Programando com Orientação a Objeto com C#\\Projeto\\POO\\ExemploPOO\\ExemploPOO.csproj",
+        "projectUniqueName": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\16-Programando com Orientação a Objeto com C#\\Projeto\\POO\\ExemploPOO\\ExemploPOO.csproj",
         "projectName": "ExemploPOO",
-        "projectPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\16-Programando com Orientação a Objeto com C#\\Projeto\\POO\\ExemploPOO\\ExemploPOO.csproj",
+        "projectPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\16-Programando com Orientação a Objeto com C#\\Projeto\\POO\\ExemploPOO\\ExemploPOO.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\16-Programando com Orientação a Objeto com C#\\Projeto\\POO\\ExemploPOO\\obj\\",
+        "outputPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\16-Programando com Orientação a Objeto com C#\\Projeto\\POO\\ExemploPOO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }

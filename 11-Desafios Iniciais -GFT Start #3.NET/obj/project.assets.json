@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\11 - Testes\\11 - Testes.csproj",
+      "projectUniqueName": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\11-Desafios Iniciais -GFT Start #3.NET\\11 - Testes.csproj",
       "projectName": "11 - Testes",
-      "projectPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\11 - Testes\\11 - Testes.csproj",
+      "projectPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\11-Desafios Iniciais -GFT Start #3.NET\\11 - Testes.csproj",
       "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-      "outputPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\11 - Testes\\obj\\",
+      "outputPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\11-Desafios Iniciais -GFT Start #3.NET\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }
