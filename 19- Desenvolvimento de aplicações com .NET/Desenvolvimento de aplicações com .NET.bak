@@ -1,0 +1,335 @@
+DESENVOLVIMENTO DE APLICAÇÕES COM O .NET - Anderson Clavico Moreira
+
+	1-O que é o Entity Framework
+	
+	O Entity framework é um ORM (Mapeador relacional de objeto)que permite que os desenvolvedores de .NET
+	trabalhem com um banco de dados usando objetos .NET. Elimina a necessidade da maioria do código dee acesso
+	a dados que os desenvolvedores geralmente precisam gravar.
+	O Entity Framework possui três linhas principais de utilização:
+		-Database First
+		-Model First
+		-Code First
+		
+
+	 Database First
+
+		Em diversos casos nos deparamos com situações em que o banco de dados foi criado antes de iniciar 
+		a aplicação. Isso é muito comum em equipes mais acostumadas com o modelo relacional do que com o 
+		modelo orientado a objetos.
+		Diante desse cenário é normal optar pela utilização Database First que tem como objetivo ler o banco
+		de dados e aplicar um engenharia reversa carregando as classes que representarão as tabelas do banco.
+		
+	 Model First
+
+		O Model First nos permite gerar primeiro um modelo e a partir dele gerar nossa base de dados.
+		Essa montagem de modelo é feita através do EDM Designer utilizando os componentes que ele nos
+		disponibiliza sendo as mais comuns "Entity" e "Association".
+		
+	 Code First (O MAIS COMUM EM PROJETOS POO)
+
+		Na abordagem Code First você cria primeiro as suas classes  de entidade e deixa para o Entity Framework
+		a responsabilidade de criar o banco de dados.
+		Essas classes são conhecidas como classes POCO(Plan Old CLR Objects) que são classes que utilizam apenas os
+		tipos do .NET Framework inclusive do "Entity", essas classes podem ser utilizadas por outros projetos que
+		utilizem ou não o Entity Framework.
+		
+	
+	2-Data Annotations
+	
+		O Datas Annotations é um recurso que permite que você adicione Atributos e Métodos em nossas classes 
+		para alterar convenções padrão e personalizar alguns comportamentos.
+		
+		Principais Atributos:
+		
+		-Required: Significa campo obrigatório.
+		-RegularExpression: Valida o campo por expressão regular
+		-Display: Nome a ser mostrado em todas as interfaces de usuário	
+		-StringLength: Determina a quantidade máxima de caracteres que poderá ser informada
+		-MinLength: Determina a quantidade mínima de caracteres que poderá ser informada
+		-DisplayFormat: Formato a ser exibido nas intefaces de usuário
+		-Range: Define a faixa de dadoa aceita pela propriedade
+		
+	3- Migrations
+
+		O Migrations é um recurso que oferece uma maneira de atualizar de forma incremental o esquema de 
+		banco de dados para manter em sincronia com o modelo de classe do seu projeto preservando os dados
+		existentes no banco de dados.
+		Com o migrations também é possível realizar o downgrade caso você deseje voltar o seu banco de dados
+		para a versão anterior em que se encontrava além de manter um histórico de alterações.
+		
+		ANTES do Entity Framework contar com suporte ao Migrations, existia apenas três estratégias para a
+		criação de banco de dados, quais sejam:
+		
+		-CreateDatabaseIfNotExists
+		-DropCreateDatabaseAlways
+		-DropCreateDatabaseIfModelChanges
+		
+		 
+		 CreateDatabaseIfNotExists
+		 
+		 Nessa estratégia o Entity Framework somente cria o banco de dados se ele não existir, ou seja, se
+		 você estiver utilizando essa estratégia e realizar uma alteração no seu modelo de classes você teria
+		 que remover o seu banco de dados e cria-los novamente perdendo assim todos os seus dados.
+		 
+		 DropCreateDatabaseAlways
+		 
+		 Nesse Modelo o Entity Framework apaga o banco de dados e recria sempre que o projeto é executado
+		 fazendo com que você perca todos os seus dados ao iniciá-lo.
+		 
+		 
+		 DropCreateDatabaseIfModelChanges
+		 
+		 Nessa estratégia o Entity Framework apaga o seu banco de dados e o recria sempre que identificar
+		 uma alteração no seu modelo de classes, isso também faz  com que você perca todos os seus dados,
+		 porém apenas quando você realizar a alteração do seu modelo.
+		 
+--------------------------------------------------------------------------------------------------------------
+
+	Introdução ao ASP NET MVC
+	
+	    1- O padrão MVC
+		
+		O MVC é um padrão de arquitetura que divide a aplicação em três camadas: a visão(View), o modelo(Model)
+		e o controlador ( controller).
+		
+		O MVC é um padrão muito utilizado devido a sua arquitetura que possibilita separar o projeto em camadas 
+		onde cada uma delas executa o que lhes é definido e nada mais.
+		Esse padrão pode ser aplicado em diversos tipos de projetos como, por exemplo, desktop, web e mobile.
+		
+		O MVC tras como benefício o isolamento das regras de negócios da inteface do usuário, o que permite que 
+		exista várias interfaces de usuários que podem ser modificadas sem afetar a regra do negócio.
+		
+
+		Camada Model- É a camada responsável pela leitura e escrita de dados, e também de suas validações.
+		
+		Camada View- É a camada de interação com o usuário.Ela apenas faz a exibição dos dados, sendo ela por
+		meio de um HTML ou XML.
+		
+		Camada Controller- É responsável por receber todas as requisições e por controlar qual model usar e qual view
+		será mostrado ao usuário.
+		
+		
+		2- Routes
+		
+		ASP.NET Web Forms
+		
+		No modelo ASP .NET WebForms as requisições do navegador eram enviadas para páginas , que deveriam existir
+		fisicamente, com isso cada URL deveria ter uma página física que a represente.
+		
+		ASP.NET MVC
+		
+		Já o modelo ASP.NET MVC as requisições do navegador são enviadas para uma Ação da Controller, tirando a 
+		necessidade	de cada URL possuir um arquivo físico.
+		
+		Routes
+		
+		Quando uma aplicação ASP.NET MVC é criada já é configurado um padrão de rota default:
+		
+		Ex:
+		url:"{controller}/{action}/{id}",
+		defaults: new {controller = "Home", action = "Index", id =UrlParameter.Optional
+		
+		Esse padrão já atende a maioria das necessidades, porém é possível criar padrões personalizados.
+		
+		Custom Routes
+		
+		Para determinadas necessidades podemos criar rotas personalizadas, isso permite uma maior flexibilidade
+		e que seja possível gerar URLs mais amigáveis para o usuário, o que torna aplicação mais acessível.
+		EX:
+		url:"student/{id}/{name}/{standardId}"
+		defaults : new {controller = "Student", action = "Index", id = UrlParameter.Optional,
+		name = UrlParameter.Optional,standardId = UrlParameter.Optional
+		
+		Exemplo:
+		
+		Exemplo de uma URL utilizando a rota default:
+		
+		
+		http://localhost:1234/home/index/100 , onde "home" é a Controller, "index" é Action Method 
+		e "100" id parameter value
+		
+		http://localhost:1234/home/index , onde "home" é a Controller, "index" é Action Method , sendo opcional o ID
+		
+		
+		
+		3- Action Results
+		
+		O Action Results é o resultado de uma Ação processada por uma Controller, o action result possui diversos
+		tipos.
+		
+		Tipos 
+		
+		Segue uma relação dos Action Results, usaremos alguns deles na criação da nossa aplicação.:
+		
+										Content Returning Results
+										
+										ViewResult	| ContentResult	
+								  PartialViewResult	| EmptyResult
+										FileResult	| JsonResult
+											JavaScriptResult
+											
+		
+										  Redirection Results
+										  
+									RedirectResult | RedirectToRouteResult
+									
+										       
+											   Status Results
+											   
+									HttpStatusCode | HttpUnauthorized
+										Result            Result
+										  HttpNotFoundResult
+										  
+		
+
+		4- HTTP Verbs
+
+		Os HTTP Verbs são métodos do protocolo HTTP que informam ao servidor qual ação ele deve executar.
+
+			GET -Buscar recursos, cache
+			POST - Criar um novo recurso
+			PUT/PATCH - Atualizar um recurso existente 
+			DELETE - Remover um recurso
+			
+		
+		5- Razor
+
+		O Razor é uma View Engine utilizada no ASP.NET MVC.
+		O seu principal objetivo é simplificar o desenvolvimento de aplicações ASP.NET pois ele deixa o código 
+		mais simples, fácil e legível.
+		
+		Benefícios 
+		
+		Como benefícios principais temos :
+		- Menor curva de aprendizagem, por ser baseado na linguagem de programação C#;
+		- Por possuir um sintaxe limpa ele requer que o desenvolvedor digite menos para chegar a um resultado;
+		- O Visual Studio possui IntelliSense para páginas Razor, o que nos dá uma maior produtividade.
+		
+		6- Middlewares
+		
+		Middlewares são componentes (classes) que é executado em todas as solicitações na aplicação ASP.NET.
+		Normalmente existem vários middlewares na aplicação e nós definimos a ordem em que são executados.
+		cada middleware adiciona ou modifica a solicitação HTTP e pode passar o controle para o próximo
+		middleware.
+		
+		Definição:
+		
+					Middleware 1		Middleware 2		Middleware 3
+							|				|					|
+		Request --->Modify Request
+						Next(); ------->Modify Request
+											Next(); ------->Modify Request ---->APP Code
+																						|
+		Response<---ModifyResponse<-----ModifyResponse<----ModifyResponse <-------------|
+		
+		
+		7-Startup.cs
+		
+		Como o próprio nome diz, a classe Startup.cs é responsável por ser o ponto inicial do projeto.
+		Dentro dela existem métodos que são responsáveis por configurarem o projeto.São eles:
+		
+		-ConfigureServices
+		-Configure
+		
+		
+		ConfigureServices
+		
+		O método ConfigureServices é responsável por registrar as classes ao contêiner de injeção de dependência,
+		após isso a classe poderá ser usada em qualquer lugar da aplicação desde que seja incluída no construtor
+		da classe em que deseja usar.
+		
+		Configure
+		
+		O Configure controla o pipeline da aplicação, é nesse método que são especificados os middlewares que 
+		serão utilizados. Se nada for colocado nesse método nem o MVC funcionará pois foi indicado a aplicação
+		o que utilizar.
+		Deve ser adicionado apenas os middlewares que forem ser utilizados, caso contrário poderá acontecer a 
+		perda de performace.
+		
+		
+		--------------------------------------------------------------------------------------------------------
+		--------------------------------------------------------------------------------------------------------
+		
+		Criando e Testando uma aplicação ASP.NET API e publicando na Cloud
+		
+		Aprendendo o conceito básico de APIs
+		
+		A sigla API em português significa "interface de programação de aplicações".
+		As APIs são uma forma de realizar a integração entre sistemas mesmo que esses possuam linguagens de 
+		programação diferente.
+		Um exemplo de API é o Google Maps que é utilizado por empresas de Hotel em que é disponibilizada dentro
+		site da empresa a localização em que ele fica.
+		
+		O que é o REST
+		
+		O REST é um conjunto de princípios que que quando aplicados de maneira correta em uma aplicação, a beneficia
+		com a arquitetura e padrões da própria web.
+		Uma aplicação que é capaz de aplicar tais princípios é chamada de RESTful.
+		
+		Swagger
+		
+		Quando é preciso consumir uma API existente é necessário conhecer as funcionalidades disponíveis e detalhes 
+		de como consumir tal funcionalidade.
+		Diante dessa necessidade existe o Swagger que é um projeto composto por algumas ferramentas para auxiliar
+		o desenvolvedor de API em algumas tarefas como por exemplo a documentação da API.
+		
+		
+		 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+										  
+										  
+										  
+										
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			
+		 	
+		 	
+		 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+
+
+

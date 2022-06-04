@@ -1,0 +1,155 @@
+	
+-----------------------------------------------------------------------------------------------------------------
+*********************************CRIANDO UMA APLICAÇÃO ASP.NET TEST***********************************************
+-----------------------------------------------------------------------------------------------------------------
+	-Adcionar um novo projeto
+	-filtrar por Teste
+
+	Projeto de Teste do xUnit -CursoTest
+
+	nota: a data annotation [Fact] que faz o VS reconhecer como teste
+
+	Vamos adicionar as Referencias -Botão direito em cima do CursoTest >Adicionar> Referencia de Projeto
+	selecionar:
+	   -CursoAPI
+	   -CursoMVC
+	 
+	Após isso vamos instalar alguns NuGets:
+	
+	 -Botão direito na Solution>Gerenciar Pacotes do NuGet para a Solução
+	 
+	  Instalar o -Microsoft.EntityFrameworkCore.Sqlserver --Manter as mesmas versões 
+				 -Microsoft.EntityFrameworkCore.Tools
+				 
+			e após localizar o Moq instalar também
+			
+	
+	Ok, vamos agora criar :
+	
+		-uma nova classe dentro do projeto e nomea-lá de CategoriasControllerTest
+	
+			Após isso vamos criar os nossos Moq's dentro da classe CategoriasControllerTest
+	
+		private readonly Mock<DbSet<Categoria>> _mockSet;
+		private readonly Mock<Context> _mockContext;
+		private readonly Categoria _categoria;
+		
+		Usar o import using Moq; using Microsoft.EntityFrameworkCore; using Curso MVC.Models;
+		
+	Agora vamos criar um Constructor dentro da classe CategoriasControllerTest e inicializa as váriaveis de moq
+	criadas acima
+	
+		_mockSet = new Mock<DbSet<Categoria>>();
+		_mockContext = new Mock<Context>();
+		_categoria = new Categoria { Id =1, Descricao = "Teste Categoria"};
+		
+		
+		
+		Ok Agora vamos criar o nosso primeiro teste testando o metodo GetCategoria(int id) , onde o mesmo recebe
+		um int id e tenta dar um FindAsync(id)
+		
+		
+		[Fact]
+		public async Task Get_Categoria()
+		{
+			var service = new CategoriasController(_mockContext.Object);
+
+			await service.GetCategoria(10;
+
+			_mockSet.Verify(m => m.FindAsync(1), Times.Once());
+		}
+				
+		[Fact]
+		public async Task Put_Categoria()
+		{
+			var service = new CategoriasController(_mockContext.Object);
+
+			await service.PutCategoria(1, _categoria);
+
+			_mockContext.Verify(m => m.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once());
+		}
+
+		[Fact]
+		public async Task Post_Categoria()
+		{
+			var service = new CategoriasController(_mockContext.Object);
+
+			await service.PostCategoria(_categoria);
+
+			_mockSet.Verify(x => x.Add(_categoria), Times.Once);
+			_mockContext.Verify(m => m.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once());
+		}
+
+		[Fact]
+		public async Task Delete_Categoria()
+		{
+			var service = new CategoriasController(_mockContext.Object);
+
+			await service.DeleteCategoria(1);
+
+			_mockSet.Verify(m => m.FindAsync(1), Times.Once());
+			_mockSet.Verify(x => x.Remove(_categoria), Times.Once);
+			_mockContext.Verify(m => m.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once());
+		}	
+		
+		
+		No Moq temos que ensinar os comportamentos dos metodos que vamos utilizar, vamos colocar os seguintes
+		comandos na Constructor abaixo de _categoria:
+		
+			_mockContext.Setup(m => m.Categorias).Returns(_mockSet.Object);
+		
+			_mockContext.Setup(m => m.Categorias.FindAsync(1)).ReturnsAsync(_categoria);
+			
+			_mockContext.Setup(m => m.SetModified(_categoria));
+			
+			_mockContext.Setup(m => m.SaveChangesAsync(It.IsAny<CancellationToken>())).ReturnsAsync(1);
+			
+		
+				
+		Vamos criar um metodo dentro da Model Context no projeto CursoAPI:
+		
+		public virtual void SetModified(object entity)
+		{
+			Entry(entity).State = EntityState.Modified;
+		}
+		
+		 E após isso vamos fazer uma modificação CategoriasController do projeto CursoAPI :
+		
+		  Em baixo da Verificação do id da categoria digitar esse comando:
+		
+		_context.SetModified(produto);
+		
+		
+		
+		
+		
+
+		
+			
+			
+			
+			
+			
+			
+			
+			
+		
+		
+		
+		
+
+			
+			
+			
+			
+		
+		
+		
+		
+		
+		
+		
+	
+	
+				 
+

@@ -1,0 +1,312 @@
+-----------------------------------------------------------------------------------------------------------------
+*********************************CRIANDO UMA APLICAÇÃO ASP.NET MVC***********************************************
+-----------------------------------------------------------------------------------------------------------------
+
+Aplicativo Web ASP.NET Core MVC(Modelo-Exibição-Controlador)--selecione essa opção
+
+Após criar a solução e o projeto
+
+Na classe Startup:
+
+Tem dois metodos o ConfigureServices e o Configure
+
+ConfigureServices:
+
+No configure service adicionamos as injeções de dependências(conteiner)
+
+Configure:
+
+Utilizamos os Middlewares
+
+Ele faz uma verificação se esta em modo de Desenvolvimento
+
+----------------------------------------------------------------------------------------------------------
+
+Na classe Program
+
+Ele usa um metodo para iniciar a Startup
+
+-------------------------------------------------------------------------------------------------------
+Dentro da pasta Controller 
+
+A pasta Controller também criada no projeto traz a controller Home controller com os metodos utilizando 
+as ActionResults
+------------------------------------------------------------------------------------------------------
+Dentro da pasta Models 
+
+também criada com o projeto  traz a model de Erro, a ErrorViewModel 
+
+-----------------------------------------------------------------------------------------------------
+Dentro da pasta View 
+
+Também criada com o projeto , traz as paginas de exibição(html,css,bootstrat...)
+
+Na pasta View>Shared>_Layout.cshtml --página principal
+
+ainda na pasta view tem a apasta Home -- index e privacy
+
+------------------------------------------------------------------------------------------------------
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+-------------------------------------------------------------------------------------------------------
+************************************ COMEÇANDO O PROJETO *********************************************
+-------------------------------------------------------------------------------------------------------
+
+ *Adicionar a model Categoria dentro da Models
+
+  - add prop do tipo int id	
+  - add prop do tipo string Descricao
+
+ Ok
+
+ Antes de continuar , vamos instalar alguns packages no projeto
+
+-Ferramentas>Gerenciador de pacotes NuGet>Console do Gerenciador de Pacotes
+
+  Dentro do console ,instalar:
+  
+ 1-  Install-Package Microsoft.EntityFrameworkCore.SqlServer
+  
+ 2-  Install-Package Microsoft.EntityFrameworkCore.Tools
+
+
+ *Adicionar a model Context dentro da Models
+ 
+  A model context herda da classe DbContext  -- add o import do EntityFrameworkCore 
+  
+  Dentro da classe Context add um metodo protegido para sobreescrever o OnConfiguring que recebe o
+  DbContextOptinsbuilder.
+  
+  Vamos criar dentro da classe Context criar uma propriedade:
+  
+  public Dbset<Categoria> Categorias {get; set;} -- dentro do <> ele pede para passar qual o tipo da tabela,
+  no caso Categoria ,de nome Categorias 
+  
+  
+    Esse metodo configura o nosso Entity Framework, é dentro dele que vamos falar qual o banco de dados 
+  utilizar  
+  
+  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+  {
+	   optionsBuilder.UseSqlServer(@"server=(localdb)\mssqllocaldb;Database=Cursomvc;Integrated Security=True");	
+  }
+  
+  Ok
+  
+  **Após esse procedimento , voltamos para o Startup.cs, pois precisamos deixar o context (banco de dados)visivel
+  
+   -Add dentro do ConfigureServices  
+      services.AddDbContext<Context>();
+	  
+	  
+  Ok
+  
+  Após , voltamos para o Console do Gerenciador de Pacotes e executamos:
+  
+	Add-Migration InitialCreate -Comando que fica dentro do Microsoft EntityFrameworkCore.Tools
+	
+	Quando executado o comando ele criará  dentro do projeto uma pasta Migrations com o nosso InitialCreate 
+	e também tira um snapshot do nosso Context.
+	Para cada Migration que criar ele armazena o histórico,sendo assim conseguimos todo o histórico de atualização
+	no banco.
+	Dentro do Migration (InitialCreate:Migration) tem dois metodos o Up , onde cria as tabelas para o banco e o 
+	Down que é para desfazer a tabela (DropTable).
+
+  OK
+
+ Voltamos para o console e executamos o comando Update-Database para criar o banco de dados, pois até então,
+ somente criamos o metodo Migration.
+
+ 
+ 
+ Agora vamos cadastrar as Categorias nas Controllers:
+ 
+  O ASP.NET MVC tem um recurso que chama-se Scaffolding, Tendo a Model Context esse recurso cria a Controller com as
+  telas (Views) e as operações de CRUD.
+  
+  -Botão direito na pasta Controller -Adicionar>Novo item com scaffold...
+  -Controlador MVC com exibições,usando o Entity Framework 
+  Selecione:
+  Classe Modelo: Categoria(...
+  Classe de Modelo: Context(...
+  
+  clique em Adicionar , ele criará a CategoriasController
+  
+  
+  Após esse procedimento vamos adicionar a Categoria no nosso menu:
+  
+  Views>Shared>_Layout.cshtml
+  
+  Copiar um <li class = "nav-item"> .....</li> e modificar:
+  -asp-controller = "Categorias 
+  -asp-action ="index">Categorias
+  
+  
+ 
+ *Bem, agora vamos criar a Model de Produto
+ 
+  -add prop int Id
+  -add prop string Descricao
+  -add int Quantidade
+  -add int CategoriaId
+  -add Categoria Categoria 
+  
+  Ok, dentro da model categoria(public class Categoria)
+  
+  -add lista de produtos:
+   public List<Produto> Produtos {get; set;}
+   
+   Dentro do Context  vamos adcionar uma prop DbSet para a model Produto
+   public DBSet<Produto> Produtos {get; set:}
+   
+  
+   Console :
+   
+   Add-Migration TabelaProduto
+   
+   Após incluir a migration tabela produto
+   
+   Update-Database
+   
+   -Botão direito na pasta Controller -Adicionar>Novo item com scaffold...
+   -Controlador MVC com exibições,usando o Entity Framework 
+   Selecione:
+   Classe Modelo: Produto(...
+   Classe de Modelo: Context(...
+  
+   clique em Adicionar , ele criará a ProdutosController
+   
+   Views>Shared>_Layout.cshtml
+   
+   Copiar um <li class = "nav-item"> .....</li> e modificar:
+   -asp-controller = "Produtos" 
+   -asp-action ="index">Produtos
+   
+   Ok
+   
+   Modificando a View para mostrar as categorias e não o Id
+   
+   Dentro de Produtos para selecionar a Categoria , o app nos mostra o id. Para mostrar a DESCRICAO	, faremos
+   as seguintes modificações:
+   
+   Na ProdutosController:
+   
+   Modificaremos o segundo parametro(dataTextField) dentro da ViewData dos metodo IActionResults, de Id para
+   Descricao , fazer o mesmo procedimento em todas as ViewData 
+   
+   Também é preciso modificar nas telas(Views) 
+   
+   -Views>Produtos
+   
+   Modificar o @Html.DisplayFor(....de item.Categoria.Id para item.Categoria.Descricao)
+   
+   dentro de Index.cshtml, Details.cshtml, Delete.cshtml
+   
+   
+   Add Data Annotations   
+   
+   Ok após isso vamos colocar os Data Annotation na models, e add o using ComponentModel.DataAnnotations   
+   
+   [Dysplay(Name = "Descrição")] - na model Produto  e na model Categoria ,em cima da prop Descricao
+   
+   [Required(ErrorMessage = "O Campo descrição é obrigatório"] - na Model Categoria em cima da prop Descricao
+   
+   [Range(1, 10, ErrorMessage ="Valor fora da faixa")]-na Model Produto
+   
+   
+   
+   Caso, queire acessar um banco de dados , o Visual Studio te dá um Gerenciador de Servidores
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+   
+   
+   
+   
+   
+   
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+ 
+ 
+ 
+ 
+	
+	
+	
+	
+	
+	
+  
+  
+
+  
+  
+
+	
+  
+  
+  
+  
+  
+  
+
+  
+  
+ 
+  
+  
+  
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

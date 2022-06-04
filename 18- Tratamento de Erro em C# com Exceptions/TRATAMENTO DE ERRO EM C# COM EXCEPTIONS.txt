@@ -1,3 +1,259 @@
-	TRATAMENTO DE ERRO EM C# COM EXCEPTIONS
+	TRATAMENTO DE ERRO EM C# COM EXCEPTIONS  - Carolina Santana Louzada - Engenheira de Qualidade de Software na Uol
+	
+	Objetivo do curso
+	
+	Compreender conceitos relacionados a erros , a importância do tratamento de exceções, aplicabilidade e
+	como implementar testes de unidade focados em exceções (exceptions) para aumentar a confiabilidade do sistema.
+	
+	---------------------------------------------------------------------------------------------------------------
+	Conceitos e importância do tratamento de exceções
+	
+	1- Conceituando exceções e seus tipo
+	
+	O que é uma exceção?
+	
+	Qualquer condição de erro ou comportamento inesperado por um programa em execução
+		
+		O erro pode vir :
+			- falha de codificação
+			- falta de recursos disponíveis
+			- condições inesperadas pelo runtime
+			
+		Tipo de erros possíveis
+			- Erros de sintaxe
+			- Erros em tempo de execução
+			- Erros lógicos
+
+		
+		Erro Lógico
+
+		Exceção provocada por falha lógica do desenvolvedor (Erro Humano)
+		Um erro muito dificil de se tratar , por ser um erro humano, Não tem como simplesmento jogar 
+		uma Exception .
+		
+		A unica forma de lidar com o erro lógico é tratar o código falho,modificar o código para um código com
+		boas práticas de programação.
+		
+		Exemplo:
+		
+			public static void Main()
+			{
+				Person p1 = new Person();
+				p1.Name = "John"
+				Person p2 = null;
+				
+				//The following throws a NullReferenceException.
+				Console.Writeline("p1 = p2: {0}", p1.Equals(p2));
+			}
+		
+		
+		Erros de tempo de execução
+		
+		Erros em tempo de execução que NÃO estão necessariamente relacionados à código mal escrito.
+		
+			- Comum em caso de leitura/escrita de arquivos (Runtime Error!)
+			- Ou o arquivo existe e está corrompido
+			
+		
+		Falha do sistema
+
+		Quando não conseguimos proseguir a execução da aplicação (falta de recursos)
+		Exemplo:
+		Memoria ou espaço suficiente
+		
+		Erro de tempo de execução que não pode ser tratado prograticamente de maneira significativa.
+		
+	
+	2- Importância do tratamento de erros
+	
+		Por que devemos tratar os erros?
+			-Evitar parada súbita do sistema
+			-Mensagens amigáveis para usuário final
+			-Melhor comunicação com desenvolvedores para tratar rapidamente o problema
+			
+--------------------------------------------------------------------------------------------------------------------
+
+	Entendendo a classe System.Exception
+	
+	1- Entender a hierarquia de classe de excessões a partir da classe base System.Exception e exceções mais comuns
+	2- Conhecer propriedades e métodos úteis
+	3- Aprender instruções associadas ao tratamento de Exceções
+	
+	
+	Propriedade e Metódos Exception
+	
+	Propriedades: 
+	
+	Message
+	InnerException
+	Stacktrace
+	Source
+	Targetsite
+	
+	Metódos
+	
+	GetBaseException
+	GetObjectData
+	GetType
+	Tostring
+	
+	
+	Comandos para lançar e tratar exceções
+	
+	
+	Comando Try
+	
+	Comando catch
+	
+	Comando finally
+	
+	Comando throw
+	
+	Comando when
+	-----------------------------------------------------------------------------------------------------------------
+	
+	Customizando exceções
+	
+	Apesar da hierarquia de classes existentes com base na classe Exception, é possivel criar sua própria 
+	classe de exceção de acord com a necessidade.
+	
+	Criando exceções customizadas
+	
+	Procedimento:
+		1- Definir uma classe que herda de Exception
+		2- Definir construtores da classe
+		3- Se necessário, sobrescreva membros cujo comportamento queira modificar
+		4- Definir se a exceção será serializável(transmintida para outra aplicação)
+		
+	----------------------------------------------------------------------------------------------------------------
+	Boas práticas no tratamento de exceções
+	
+	 1-Use try/catch/finally em trechos de códigos que podem potencialmente gerar exceções e que de fato seu prórpio
+	código também consegue tratar
+	 2-Nos blocos catch, sempre ordene os tratamentos das exceções das classes mais específicas para mais genéricas.
+	 3-Faça limpeza automática de recursos alocados com using.Caso o objeto não implemente IDisposable utilize
+	 finally.
+	 4-Caso exista uma condição com grandes chances de erro, verifiqeu a viabilidade de chaecar a condição antes
+	 de somente tratar a exceção
+	 EX:
+		try
+		{
+			conn.Close();
+		}
+		catch(InvalidOpertationException ex)
+		{
+			Console.Writeline(ex.GetType().FullName);
+			Console.Writeline(ex.Message);
+		}	
+	 
+		ao invés de tratar a com exceção igual a cima , faça uma estrutura de condição, igual abaixo:
+
+		if(conn.State != ConnectionState.Closed)
+		{
+			conn.Close();
+		}
+	
+     
+	 5- Projete classes de forma que as exceções seja, evitadas ou minimizadas.	
+	 6- Lance exceções ao invés de somente retornar um status code.
+	 7- Somente crie novas classes de exceções, caso as pré-definidas não satisfaçam as necessidades do código.
+	 8- Crie classes com a terminação Exception e derivadas diretamente da classe base Exception.
+	 9- Utilize no mínimo os construtores j´definidos na classe base
+	10-	Escreva mesngens de erros claras e sucintas.
+	11- É uma boa prática incluir strings traduzidas de acordo com a linguagem do usuário da aplicação através de 
+	sattelites assemblies.
+	12- Em exceções customizadas forneça propriedades adicionais conforme necessidade.
+	13- Utilize o comando throw para que o stack trace seja mais útil, pois o rastreio começa a partir do lançamento
+	até a captura da exceção.
+	14- Utilize métodos construtores de exceções.
+		EX:
+			FileReaderException NewFileIOException()
+			{
+				string description = "My NewFileIOException Description";
+				
+				return new FileReaderException(description);
+			}
+	15- Restaure o estado da aplicação caso métodos completem sua execução devido à exceções.
+		EX:
+			string withdrawalTrxID = from.Withdrawal(amount);
+			try
+			{
+				to.Deposit(amount);
+			}
+			catch
+			{
+				from.RollbackTransaticon(withdrawalTrxID);
+				throw;
+			}
+			
+		OU
+		
+			catch(Exception ex)
+			{
+				from.RollbackTransaticon(withdrawalTrxID);
+				throw new TransferFundsexception("Withdrawal failed.", innerException: ex)
+				{
+					From = from,
+					To = to,
+					Amount = amount
+				};
+			}		
+    -----------------------------------------------------------------------------------------------------------------
+	
+	Teste de unidades para exceções
+	
+	Implementação de testes de unidades para exceções 
+	Teste de unidades são importantissimas para qualquer aplicação, para ter a confiabilidade da aplicação , para 
+	facilitar a manutenção
+	
+	Objetivos:
+	1- Revisar o conceito e implementação de testes de unidade
+	2-Aprender a implementar testes de unidade para lançamento de exceções com MSTest V2, Xunit e NUnit.
+	
+	O que são testes unitários?
+	
+	São testes que fazem verificação de unidades/componentes da aplicação, comparando a um retorno esperado com o 
+	retorno atual do código testado.
+	
+	
+	
+	
+	 
+	
+		
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+		
+			
+			
+		
+			
+			
+			
+			
+		
+			
+			
+			
+			
+		
+	
+	
+	
+	
+	
+	
 	
 	

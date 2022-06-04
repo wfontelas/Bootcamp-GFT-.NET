@@ -1,0 +1,140 @@
+
+-----------------------------------------------------------------------------------------------------------
+*******************************************API Web ASP.NET************************************************ 
+
+************************************************CursoAPI***************************************************
+-------------------------------------------------------------------------------------------------------------
+--Apagar a Controller/Classe WeatherForecastController.cs dentro da pasta Controllers e da Projeto
+
+--Habilitar o Swagger -> Botão direito dentro de CursoAPI > Gerenciar Pacotes do NuGet > Procurar
+
+Swashbuckle.AspNetCore > Instalar
+
+--Após a instalção do Swagger , vamos configurá-lo: Botão direito dentro de CursoAPI > Propriedades 
+
+ 1-Compilar >Ativar o xml  ou no vs 22 Saída habilitar o "Arquivo da documentação"
+ 2-Depurar > IniciarNavegador URL - Mudar o nome para swagger e clicar em Salvar
+ 
+ 
+ 
+ --Startup: -> Precisamos habilitar o swagger
+ 
+ 1-Injetar a dependencia dele no ConfigureServices
+	
+	services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Curso API", Version = "v1"});});
+	
+	fazer o import da using Microsoft.OpenAPI.Models;
+	
+ 2-	Habilitar o middleware após a verificação 
+	
+	app.UseSwagger();
+	app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "CursoAPI");});
+	
+	Após isso compilar para gerar o CursoAPI.xml
+	
+	
+	
+-- Agora vamos referenciar as Models Categoria, Produtos e Context do projeto
+CursoMVC.
+
+	Botão direito dentro de CursoAPI > Adicionar > Referencia
+	
+	Dentro da solução referenciar o CursoMVC
+	
+	
+	
+	Adicionando as Controllers: 
+	
+	Botão direito na pasta Controllers > adicionar Novo item com scaffold> controlador API com ação, usando 
+	EntityFramework
+	Classe modelo: Categoria(CursoMVC.Models)
+	Classe de contexto de dados:Context(CursoMVC.Models)
+	Adicionar
+	
+	Após isso injetar a depencia do Context dentro da Startup:
+	
+	services.AddDbContext<Context>(); --copiado da Startup do projeto Curso MVC
+	
+	importar o using.CursoMVC.Models;
+	
+	
+	
+	Para a criar a classe de produtos no CursoAPI precisamos comentar ou apagar a 
+	propiedade List<Produto> produtos { get; set;}
+	
+	Botão direito na pasta Controllers > adicionar Novo item com scaffold> controlador API com ação, usando 
+	EntityFramework
+	Classe modelo: Produtoes(CursoMVC.Models)
+	Classe de contexto de dados:Context(CursoMVC.Models)
+	Adicionar
+	
+	Para trazer as Categorias dentro de produtos precisamos alterar dentro da Produtoscontroller:
+	
+	Dentro do metodo GetProdutos
+	
+	adicionar um Include("Categoria")
+	
+	Dentro do metodo GetProdutos(int id)
+	
+	adicionar Include("Categoria").FirstOrDefaultAsync(x => x.Id == id);
+	
+	
+	------------------------------------------********************-------------------------------------------
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+	
+
+
+
+ 
+	
+	
+ 
+
+ 
+ 
+ 
+ 
