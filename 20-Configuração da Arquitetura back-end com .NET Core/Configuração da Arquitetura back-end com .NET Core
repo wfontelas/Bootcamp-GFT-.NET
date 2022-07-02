@@ -1,0 +1,1124 @@
+--------------------------------------------------------------------------------------------------------------------
+**************Configuração da Arquitetura do Back-end com .Net Core - Desenvolvimento .NET Core Avançado************
+--------------------------------------------------------------------------------------------------------------------
+***APRESENTAÇÃO DO CENÁRIO E DOCUMENTAÇÃO DA API COM SWAGGER.***
+
+	-Introdução e setup da API
+	
+	Objetivos:
+	
+	-Organizar os componentes de uma aplicação
+	-Documentar uma API
+	-Aplicação de Design Pattern
+	
+--------------------------------------------------------*	
+	***Parte 1: Apresentação do cenário***
+	
+	API Rest -Backend (SQL, Mobile, Website- Frontend)
+	
+	Cenário
+	
+	-Cadastro de usuário
+	-Login de usuário
+	-Cadastro de curso usuário autenticado
+	-Lista de cursos do usuário autenticado
+--------------------------------------------------------*	
+	***Parte 2: Setup da API***
+	
+	Visual Studio
+	
+	Criar um novo projeto ASP.NET  Web Application ou API Web do ASP.NET Core
+	
+	
+	projeto:curso.api
+	Solução:curso
+	
+	Após criar o projeto vamos deletar as classe WeatherForecast.cs e a Controller WeatherForecastController
+	
+	Dentro da Pasta Properties ,modificar launchSettings.json nas chaves "launchUrl" para vazio 
+	
+	
+	-Vamos iniciar as primeiras configurações das nossas rotas
+	
+	 Criar uma Controller do tipo API controller -Empty e nomea-lá como UsuarioController
+	 
+	 Dentro da classe Usuario Controller criar um IActionResult do tipo público com o nome de Logar, informando que
+	 essa rota terá o verbo HttpPost e trará um return OK(loginViewModelInput)
+	 
+	 Após isso , dentro do projeto criar uma pasta chamada Models e dentro da Models criar uma pasta com o nome
+	 de Usuarios e criar uma classe/model com o nome LoginViewModelInput
+	 
+		dentro da model LoginViewModelInput criar:
+		
+			prop string Login
+			prop string Senha
+			
+	Voltando para a Controller UsuarioController vamos passar model LoginViewModelInput loginViewModelInput dentro de 
+	Logar()	e trazer o import da model
+	
+	 
+	--------------------------------------------------------------------------------------------------------
+	 **Nesse instante vamo rodar em modo debug e testar no app Postman**
+	  
+	  Usar a ferramenta Post dentro do Postman, vamos colar a url e a rota "/api/[controller]" , modificando
+	  o Body para o tipo Raw  e JSON(application/json)
+	  
+	  {
+		"Login" : "teste",
+		"Senha"	: "senha"
+	  }
+	----------------------------------------------------------------------------------------------------------  
+	 Continuando...vamos criar uma nova model , a RegistroViewModelInput:
+		
+		-prop string Login
+		-prop string Email
+		-prop string Senha
+		
+		Trazendo as Data Annotations do tipo Required com ErrorMessage "campo" é obrigatorio" para cada prop criada, 
+		e importar as using's
+		
+		Dentro da Controller UsuarioController vamos criar um novo metodo public IActionResult e nomea -ló 
+		de Registrar trazendo a modelView RegistroViewModelInput loginViewModelInput , trazendo o
+		return Created("",loginViewModelInput);  e os atributos [HttpPost] e [Route("registrar").
+		
+		Ainda na Controller UsuarioController trazer os atributos [Route("logar")] para o metodo Logar ,
+		também trazer os atributos para a Controller modificando a o atributo route para [Route("api/v1/usuario")] 
+		em cima do atributo [ApiController].
+		
+     ---------------------------------------------------------------------------------------------------------
+	 Vamo rodar em modo debug e testar no app Postman novamente
+	  
+	  Usar a ferramenta Post dentro do Postman, vamos colar a url e a rota "/api/v1/usuario/logar",
+	  
+	  {
+		"Login" : "teste",
+		"Senha"	: "senha"
+	  } 
+	  
+	 Solicite uma nova requisição no Postman ee cole a url e a rota "  e a rota "/api/v1/usuario/registrar" ,
+	  modificando o Body para o tipo Raw  e JSON(application/json) , trazendo os campos da ModelView no json:
+	  {
+		"Login": "teste1",
+		"Email": "email@email.com",
+		"Senha": "Senha123",
+	  }	
+		
+	e verificar a resposta de ambos os metodos 
+		
+		
+		
+		
+		
+	Configuração do swagger para a documentação da API
+	
+		Antes disso para criar os arquivos metadata xml dentro do metodo IActionResult na Controller UsuarioController
+		digitando /// em cima do atributo [HttpPost].
+	
+		Botão direito no projeto >Propriedades>Build>seleciona a opção "XML documentation file" (curso.api.xml)
+		após isso compilar para gerar o XML --Gera um xml de metadados de todo o nosso projeto (Documentação) 
+		
+		Swagger - instalar o pacote no Gerenciador de Pacotes NuGet - Swashbuckle.AspNetCore.Swagger
+			-Na classe Startup No metodo ConfigureServices  adicionar o:
+			services.AddSwaggerGen(c =>
+				{
+					var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+					var xmlPath =Path.Combine(AppContext.BaseDirectory, xmlFile);  --diretorio da aplicação
+					c.IncludeXmlComments(xmlPath);
+				}
+				
+			-Adicionar o middleware e configurar a sua rota:
+				
+				app.UseSwagger();
+				app.UseSwaggerUI(c =>
+				{
+					c.SwaggerEndpoint("/swagger/v1/swagger.json","Api curso");
+					c.RoutePrefix = string.Empty;
+				}
+				
+				
+		Rodar em modo debug para verificar se o projeto acesso o arquivo direto o swagger		
+				
+			
+			
+			Instalar o pacote no Gerenciador de Pacotes- Swashbuckle.AspNetCore.Annotations	e colocar os Annotations
+			na UsuarioController
+			
+			Criar a ViewModel ValidaCampoViewModelOutput e a ErroGenericoViewModel dentro da pasta Models
+				-trazendo uma prop string Mensagem na  ErroGenericoViewModel
+				-trazendo uma prop IEnumerable<string> Erros {get; private set;} e um metodo para inicializar a 
+				 prop dentro da ViewModel ValidaCampoViewModelOutput:
+				 -public ValidaCampoViewModelOutput(IEnumerable<string> erros) 
+						{
+							Erros = erros;
+						}	
+						
+			Após , modificar os metadados :
+			 /// <summary>
+			 /// Este serviço permite autenticar um usuário cadastrado e ativo.
+			 /// </summary>
+			 /// <param name="loginViewModelInput">View model do login</param>
+			 /// <returns>Retorna status ok, dados do usuario e o token em caso de sucesso</returns>
+			 
+			 Configurar abaixo dos metadados e importar a using :			
+			
+			[SwaggerResponse(statusCode: 200, description: "Sucesso ao autenticar", Type = typeof(LoginViewModelInput))]
+			[SwaggerResponse(statusCode: 400, description: "Campos Obrigatórios", Type = typeof(ValidaCampoViewModelOutput))]
+			[SwaggerResponse(statusCode: 500, description: "Erro interno", Type = typeof(ErroGenericoViewModel))]
+			
+			
+			****Rodar em Debug****
+			
+			
+		Continuando...
+		Setup validação de entrada de dados:
+		
+			Na ViewModel Models>Usuarios> LoginViewModelInput criar a Data Annotations:
+			
+			[Required(ErrorMessage = "O Login é obrigatório"]
+			[Required(ErrorMessage = "A senha é obrigatório"]
+			
+			
+			
+			Configuração para trazer somente a lista de Erros (Usando o ConfigureApiBehaviorOptions) de acordo 
+			como foi documentado no atributo SwaggerResponse, sem todas as informações desnecessárias para o 
+			cliente. Para isso precisamos desabilitar o ModelState da seguinte forma:
+			
+			No metodo ConfigureServices da Startup:
+			
+				services.AddController().ConfigureApiBehaviorOptions(options =>
+				{
+				
+					options.SuppressModelStateInvalidFilter = true; //desabilitar o Model status , para customizar
+				
+				});
+			
+			E na viewController UsuarioController, dentro do metodo IActionResult Logar, fazer uma verificação se
+			o status não é válido:
+			
+			public IActionResult Logar(LoginViewModelInput loginViewModelInput)
+			{
+				if(!ModelState.IsValid)
+				{
+					return BadRequest(new ValidaCampoViewModelOutput(ModelState.SelectMany(sm => sm.Value.Errors)
+					.Select(s => s.ErrorMessage)));
+					
+				}
+				
+			 
+		
+		Filtros (ActionFilter)	- para no caso desse projeto evitar a duplicidade de código no mesmo controller
+			 
+			 Basicamente os filtros intercepta as requests
+			 
+			 -Botão direto em cima do projeto > Adicionar > Nova Pasta como nome de "Filters".
+			 -Criar uma classe com o nome de ValidacaoModelStateCustomizado dentro da pasta "Filters"
+			 -O classe criada usa a POO , e herda o atributo "ActionFilterAttribute"
+			 -Dentro da classe acima, criar um metodo public override void para sobreescrever o metodo 
+			 OnActionExecuting(ActionExecutingContext context) Ctrl+F4
+			 -Trazer a condição if(!ModelState.IsValid).... da controller para dentro do metodo acima, porém
+			 com uma aulterção especifica:
+				if(!context.ModelState.IsValid)
+				{
+					var validaCampoViewModel = new ValidaCampoViewModelOutput(context.ModelState.SelectMany(sm => 
+						sm.Value.Errors).Select(s => s.ErrorMessage));
+					context.Result = new BadRequestObjectResult(validaCampoViewModel);
+					
+			 -Comentar a condição if(!ModelState.IsValid)... dentro da Controller "UsuarioController"
+			 -Ainda na Controller "UsuarioController" inserir o DataAnnotation [ValidacaoModelStateCustomizado]
+			 na rota Logar e na rota registrar.
+			 
+			 *Obs: Uma vez usuando a POO , apertando F12 em cima da classe herdada ActionFilterAttribute , 
+			 teremos uma série de metodos virtuais, metodos que podemos sobreescrever*
+			 
+	------------------------------------------------//---------------------------------------------------------
+			 
+	 ***PROTEGENDO A API***		
+			 
+		Configuração do provider JWT(Json Web Token)	 
+			 
+			 -Instalar o package no Nuget Microsoft.AspNetCore.Authentication
+			 -	''		''    ''  '' ''   Microsoft.AspNetCore.Authentication.JwtBearer
+			 
+			 
+			 Após isso voltamos para a a classe Startup.cs e inserirmos os seguinte códigos para criar uma chave
+			 de Configuração no metodo ConfigureServices em baixo do service.AddSwaggerGen :			 
+			 
+			 var secret = Encoding.ASCII.GetBytes(Configuration.GetSection("JwtConfigurations:Secret").Value);
+			 services.AddAuthentication(x =>
+			 {
+				x.DefaultAuthenticationScheme = JwtBearerDefaults.AuthenticationScheme;
+				x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+			 })
+			 .AddJwtBearer(x =>
+			 {
+				x.RequireHttpsMetadata = false;
+				x.SaveToken = true;
+				x.TokenValidationParameters = new TokenValidationParameters
+				{
+					ValidateIssueSigningKey = true,
+					IssuerSigningKey = new SymmetricSecurityKey(secret),
+					ValidateIssuer = false,
+					ValidateAudience = false
+				};
+				
+			 });
+			 
+			 
+			 Após isso criamos uma chave e temos que inseri-lá no "appsettings.json", acima da chave "Logging" :
+			 
+			 "JwtConfigurations": {
+				"Secret": "MxfsT&d9gprP>!9$Es(X!5g@;ef!5sbk:jH\\2.}8ZP'qY#7"
+			 },
+
+
+			Na Controller UsuarioController dentro do metodo IActionResult Logar vamos validar o token do usuario,
+			trazendo os seguintes códigos:
+			
+				
+			
+				var secret = Encoding.ASCII.GetBytes("MxfsT&d9gprP>!9$Es(X!5g@;ef!5sbk:jH\\2.}8ZP'qY#7");
+				var symmetricSecurityKey = new SymmetricSecurityKey(secret);
+				var securityTokenDescriptor = new SecurityTokenDescriptor
+				{
+					Subject = new ClaimsIdentity(new Claim[]
+					{
+						new Claim(ClaimTypes.NameIdentifier, usuarioViewmodelOutput.Codigo.Tostring()),
+						new Claim(ClaimTypes.Name, usuarioViewmodelOutput.Login.ToString()),
+						new Claim(ClaimTypes.Email, usuarioViewmodelOutput.email.ToString())
+					}),
+					Expires = Datetime.UtcNow.AddDays(1),
+					SigningCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature)
+				};
+				var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+				var tokenGenerated =jwtSecurityTokenHandler.CreateToken(securityTokenDescriptor);
+				var token = jwtSecurityTokenHandler.WriteToke(tokenGenerated);	
+				
+				return Ok(new
+				{
+					Token = token,
+					Usuario = usuarioViewmodelOutput
+				});
+
+				
+			Para fins didaticos,vamos criar uma Model UsuarioViewModelOutput dentro da pasta Model, passando 
+			as prop:
+				-prop int Codigo
+				-prop string Login
+				-prop string Email
+				
+			e após isso vamos criar uma variavel e instacia-lá para termos um Login teste(fake) dentro da 
+			UsuarioController no metodo IActionResult Logar:
+					
+					var usuarioViewModelOutput = new UsuarioViewModelOutput()
+					{
+						Codigo = 1,
+						Login = "WilliamFontelas",
+						Email = "email@email.com"
+					};	
+					
+			
+				OBS: Debbugar para verificar se o código esta trazendo o Usuario(fake) e o token
+			
+			
+			
+		Vamos cria um nova pasta na pasta Models e nomea-lá de Cursos, dentro dela vamos criar um ModelView
+			CursoViewModelInput e criar as seguintes prop's:
+
+				prop string Nome
+				prop string Descricao
+				
+			
+		Vamos criar uma nova Controller CursoController do tipo API Controller - Empty , e dentro da controller
+		vamos criar a nossa rota:
+			
+				/// <summary>
+				/// Este serviço permite cadastrar curso para o usuário autenticado
+				/// </summary>
+				/// <param name="cursoViewModelInput"></param>
+				/// <returns>Retorna status 201 e dados do curso usuário</returns>
+				[SwaggerResponse(statusCode: 201, description: "Sucesso ao Cadastrar um curso")]
+				[SwaggerResponse(statusCode: 401, description: "Não autorizado")]
+				[HttpPost]
+				[Route("")]
+				
+				public async Task<IActionResult> Post(CursoViewModelInput cursoViewModelInput)
+				{
+					var codigoUsuario = int.Parse(User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
+					return Created("",cursoViewModelInput);
+					
+				}
+				
+				/// <summary>
+				/// Este serviço permite obter todos os cursos ativos do usuário.
+				/// </summary>
+				/// <returns>Retorna o status ok e dados do curso usuário</returns>
+				[SwaggerResponse(statusCode: 201, description: "Sucesso ao obter os obter os cursos")]
+				[SwaggerResponse(statusCode: 401, description: "Não autorizado")]
+				[HttpGet]
+				[Route("")]
+				
+				public async Task<IActionResult> Get()
+				{
+					var cursos = new List<CursoViewModelOutput>(); //variavel criada para fins didaticos 
+					
+					//var codigoUsuario = int.Parse(User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
+					cursos.Add(new CursoViewModelOutput()
+					{
+						Login = "",
+						Descricao = "teste",
+						Nome = "teste"
+					});	
+					return Ok(cursos);
+					
+				}
+				
+			Modifique a Rota [Route("api/[controller]")] para [Route("api/v1/cursos")]	
+
+			Para o metodo Get acima funcionar vamos criar a viewModel CursoViewModelOutput em Models>Cursos 
+			trazendo três propriedades:
+			
+				prop string Nome
+				prop string Descricao
+				prop string Login
+				
+			
+						
+				
+			Após isso vamos acrescentrar o atributo [Authorize] na Controller CursoController em baixo do
+			atributo [ApiController]
+			OBS: O atributo Authorize protege a nossa API, tanto para cadastro (POST) , quando para consulta
+			OBS : debugar antes  de passar o Atributo [Authorize] , para verificar com e sem ele.
+			
+			Ainda na classe Startup.cs vamos adicionar um middleware para funcionar a autenticação:
+			
+			app.UseAthetication();
+			
+			Agora vamos executar um "Try out"  no Post Logar do Usuario da API para fazer uma autenticação e 
+			a resposta do Post trará o token.Vamos fazer os seguintes procedimentos:
+
+				-Copiar o Token gerado na response
+				-Abrir o POSTMAN e abrir uma nova Request e inserir a url da API mais /api/v1/cursos, selecionar 
+				  o cabeçalho(Headers), no campo "Key" digitar Authorization e no campo "Value" chamamos o "Bearer"
+				  e passamos o Token copiado e apertar o SEND
+				(o postman trara um status 401 Unathorized caso o token não seja passado na Headers)
+				
+			
+			Podemos inserir a seguinte configuração abaixo, para testar a autorização por token no Swagger,
+			dentro do services.AddSwaggerGen na metodo ConfigureServices  da Startup:
+			
+				
+					c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+					{
+						Description = "JWT Authorization header using th Bearer scheme (Example: 'Bearer 12345abcdef')",
+						Name = "Authorization",
+						In = ParameterLocation.Header,
+						Type = SecuritySchemeType.ApiKey,
+						Scheme = "Bearer"
+					});	
+					c.AddSecurityRequirement(new OpenApiSecurityRequirement
+					{
+						{
+							new OpenApiSecurityScheme
+							{
+								Reference = new OpenApiReference
+								{
+									Type = ReferenceType.SecurityScheme,
+									Id = "Bearer"
+								}	
+							},
+							Array.Empty<string>()
+						}	
+					});	
+					
+			Após isso executar  e verificar o botão criado na API , o Authorize , cujo tem que passar o Bearer 
+			e o token.
+			
+			
+	--------------------------------------------------//----------------------------------------------------------
+	****Setup da API - Camada de persistência*****	
+				
+			Modelando as Entidades de banco de dados
+			
+			Criar uma pasta no projeto e nomea-lá como Infraestruture
+			Criar uma nova pasta no projeto e nomea-lá de Business e uma sub pasta dentro desta e a nomea-la
+			de Entity	
+			Add uma nova classe dentro da pasta Entity e colocar o nome de Usuario e criar as prop's:
+				-prop int Codigo
+				-prop string Login
+				-prop string Email
+				-prop string Senha
+				
+			OBS: Lembre se de usar Ctrl+r+g para limpar as using e namespace que não estão usando
+			
+			Add uma nova classe(entidade) e nomea-lá de Curso e criar as prop's:
+				-prop int Codigo
+				-prop string Nome
+				-prop sting Descricao
+				-prop int CodigoUsuario
+				-prop virtual Usuario Usuario
+				
+
+			Agora vamos entrar na parte de ORM - EntityFramework e instalar os pacotes no Nuget:
+				
+				-Microsoft.EntityFrameworkCore
+				
+			
+			Configurando o nosso Contexto DbContext
+			
+			Antes de avançar vamos criar uma pasta dentro de Infraestruture e nomea-la de Data e dentro dessa pasta
+			vamos criar uma classe e nomea-la de CursosDbContext que herda da classe DbContext que vem no pacote
+			do EntityFramework.
+			
+			Continuando,agora vamos criar uma pasta dentro de Infraestruture>Data e nomea-la de Mappings, dentro 
+			dessa pasta	a gente vai configurar as nossas entidades:
+			
+				-criar uma classe UsuarioMapping
+					essa classe herda uma interface IEntityTypeConfiguration<Usuario>
+					Vamos implementar o metodo Configure: 
+						public void Configure(EntityTypeBuilder<Usuario> builder)
+						{
+							builder.ToTable("TB_Usuario");
+							builder.Haskey(p => p.Codigo);
+							builder .Property(p => p.Codigo).ValueGeneratedOnAdd();	
+							builder .Property(p => p.Login);
+							builder .Property(p => p.Senha);
+							builder .Property(p => p.Email);
+						}	
+					OBS: p/usar o ToTable temos que instalar o pack Microsoft.EntityFrameworkCore.Relational
+				
+				
+				-criar uma classe CursoMapping
+					essa classe herda uma interface IEntityTypeConfiguration<Curso>
+					Vamos implementar o metodo Configure: 
+						public void Configure(EntityTypeBuilder<Curso> builder)
+						{
+							builder.ToTable("TB_Curso");
+							builder.Haskey(p => p.Codigo);
+							builder .Property(p => p.Codigo).ValueGeneratedOnAdd();	
+							builder .Property(p => p.Nome);
+							builder .Property(p => p.Descricao);
+							builder .HasOne(p => p.Usuario)
+								 .WithMany().HasForeignKey(fk => fk.CodigoUsuario);
+						}
+				
+			
+			Voltando na pasta Data , na classe CursoDbContext:
+				
+				-vamos instaciar o nosso constructor, passando o DbContextOptions  tipando ele para a classe base:
+					public CursoDbContext(DbContextOptions<CursoDbContext> options) :base(options)
+					{
+						
+					}
+					
+					
+				-vamos criar o metodo protegido OnmodelCreating para sobreescrever, passando a ModelBuilder:
+					protected override void OnmodelCreating(ModelBuilder modelBuilder)
+					{
+						modelBuilder.ApplyConfiguration(new CursoMapping());
+						modelBuilder.ApplyConfiguration(new UsuarioMapping());
+						base.OnmodelCreating(modelBuilder);
+					}
+				- vamos criar uma prop do tipo DbSet<>	:
+				
+				public DbSet<Usuario> Usuario { get; set;}
+					
+			Após isso, vamos criar um em Controllers>UsuarioController , dentro da rota Registrar, a inicialização
+			do  CursoDbContext	, informando o caminho do banco no UseSqlServer e logando um usuario:
+				
+				var optionsBuilder = new DbContextOptionsBuilder<CursoDbContext>();
+				optionsBuilder.UseSqlServer("Server=localhost;Database=CURSO;user=sa;passaword=Lcs!sol@inf1");
+				
+				CursoDbContext contexto = new CursoDbContext(optionsBuilder.Options);
+				
+				var usuario = new Usuario();
+				usuario.Login = loginViewModelInput.Login;
+				usuario.Senha = loginViewModelInput.Senha;
+				usuario.Email = loginViewModelInput.Email;
+				contexto.Usuario.Add(usuario);
+				contexto.SaveChanges();
+				
+				return Created("", loginViewModelInput);
+				
+			Agora vamos instalar o pack Microsoft.EntityFrameworkCore.Tools
+			
+			Vamos criar uma nova pasta no projeto e nomea-la como Configurations e dentro dessa pasta vamos criar
+			uma classe chamada DbFactoryDbContext que herda da Interface IDesignTimeDbContextFactory<> e implementa
+			o metodo CreatedDbContext, trazendo a inicialização que esta na Controller>UsuarioController> rota 
+			Registrar dentro deste metodo:
+			
+				public CursoDbContext CreatedDbContext(string[] args)
+				{
+					var optionsBuilder = new DbContextOptionsBuilder<CursosDbContext>();
+					optionsBuilder.UseSqlServer("Server=localhost;Database=CURSO;user=sa;passaword=Lcs!sol@inf1");				
+					CursosDbContext contexto = new CursosDbContext(optionsBuilder.Options);
+					
+					return contexto;
+				}
+				
+				Instalar o pack Microsoft.EntityFrameworkCore.SqlServer para acessar o metodo acima
+				
+			
+			Após instalarmos o Tools da EntityFrameworkCore, vamos rodar o comando Add-Migration em Ferramentas>
+			gerenciador de Pacotes do NuGet> console do Gerencioador de Pacotes	para criar a Migration e os comandos 
+			Create tabelas do banco.
+			
+				Add-Migration Base-Inicial
+				
+			
+			Para importar um Migration para o Banco de dados , podemos inicializar o metodo	GetPendingMigrations
+			dentro da Controller> UsuarioController na rota Registrar em baixo da inicialização 
+			CursoDbContext contexto = new CursoDbContext(optionsBuilder.Options):
+			
+				var migracoesPendentes = contexto.Database.GetPendingMigrations();
+				
+				if(migracoesPendentes.Count() > 0)
+				{
+					contexto.Database.Migrate();
+				}
+				
+			Após isso colocar os atributos [SwaggerResponse] para documentar e modificar os comentarios das
+			Tags <param></param>:
+			
+			///<param name ="loginViewModelInput">View model do registro de login </param>
+			
+				
+			Feito isso vamos debugar e dentro da API no metodo Post , vamos executar para criar um registro
+			e verificar se o mesmo esta no banco de dados.
+
+	-------------------------------------------------//---------------------------------------------------------------
+			
+	****Um pouco de Design Pattern
+	
+			Em cima desse cenário vamos aplicar um pouco de Design Pattern
+	
+		
+			IOC = Inversão de controle
+			
+			DI Pattern = Injetor de dependências - Técnicas de Refatoração
+			
+			
+		Repository Pattern - Criação de classes e interfaces
+			
+			Vamos criar uma pasta dentro da pasta Business e nomea-lá de Repositories,dentro dessa pasta vamos criar 
+			uma Interface e nomea-lá de IUsuarioRepository 
+									
+			Agora vamos criar uma nova pasta em Infraestruture>data e renomea-lá de Repositories e dentro da pasta
+			vamos criar a classe UsuarioRepository que vai herdar da Interface IUsuarioRepository
+			
+			Dentro da Controller UsuarioController, no metodo Registrar , ao inves de usar a classe usuario 
+			instanciando-á,vamos refatorar para o nosso repositório:
+			
+			Primeiro vamos implementar a interface dentro da classe , logo acima dos comentarios:
+			
+			 IUsuarioRepository _usuarioRespository;
+			
+			Após isso vamos passar metodo Adicionar dentro do metodo Registrar, trazendo o usuario:
+			
+			 _usuarioRespository.Adicionar(usuario);
+			 
+			Ctrl +. para gerar o metodo Adicionar dentro da interface IUsuarioRepository, que ficará dessa 
+			 forma:
+			 
+			 void Adicionar(Usuario usuario)
+			 
+			Vamos importar o metodo Adicionar da Interface IUsuarioRepository na classe UsuarioRepository
+			e importar os códigos abaixo de dentro da controller UsuarioController,metodo Registrar colocando
+			os dentro do metodo Adicionar:
+			
+			contexto.Usuario.Add(usuario);
+            			
+			após isso vamos comentar na UsuarioController a variavel migracoesPendentes e sua condição e a 
+			variavel optionsBuilder e contexto.
+			
+			Ainda dentro da UsuarioController vamos passar o metodo Commit() e Ctrl +. para gerar o metodo na
+			IUsuarioRepository:
+			
+			 _usuarioRespository.Commit(); 
+			 
+			Vamos implementar o metodo Commit da IUsuarioRepository na classe UsuarioRepository,após isso 
+			vamos passar o contexto.SaveChanges();
+			
+			Após isso vamos injetar o ctor na classe UsuarioRepository para injetar as dependencias:
+			
+			 public UsuarioRepository(CursoDbContext contexto)
+			 {
+				 _contexto = contexto;
+			 }
+				
+			modificando a permissão do CursoDbContext contexto; para private readonly CursoDbContext _contexto
+			
+			
+			Ok, agora na classe Startup vamos instaciar a classe UsuarioRepository e a CursoDbContext, usando os 
+			services:
+			
+				services.AddDbContext<CursoDbContext>(options =>
+				{
+					options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+				});
+				services.AddScoped<IUsuarioRepository, UsuarioRepository>();	
+				
+				
+			Sabendo que a classe IConfiguration Configuration praticamente lê appsettings.json, vamos trazer 
+			o ConnectionStrings:
+			
+				"ConnectionStrings":{
+				   "DefaultConnection" : "Data Source=(localdb)\mssqllocaldb;Integrated Security=True"
+				},	
+
+
+			Ok, após isso vamos modificar o o IUsuarioRepository _usuarioRespository; dentro da controller
+			UsuarioController para private readonly IUsuarioRepository _usuarioRespository e trazer o 
+			constructor:
+				public UsuarioController(IUsuarioRepository usuarioRespository)
+				{
+					_usuarioRespository = usuarioRespository;
+				}
+				
+		*Colocar um breakpoint no metodo IUsuarioRepository na UsuarioController e debugar para verificar, usar
+		o metodo Post Registrar e verificar se alterou no banco.
+		
+			
+			Ok, vamos continuar arrumando a casa com o Design Pattern:
+			
+				Vamos trazer um dependencia que já estava injetada dentro do container de injeção de dependencia,
+				dentro da UsuarioController vamos adicionar  no constructor o IConfiguration, trazendo a interface 
+				IConfiguration:
+
+				private readonly IConfiguration	_configuration;
+				
+				public UsuarioController(IUsuarioRepository usuarioRepository, IConfiguration configuration)
+				{
+					_usuarioRespository = usuarioRepository;
+					-configuration = configuration;
+				}
+				
+			
+			Agora vamos modificar o metodo que modifica o token dentro da var secret, obtendo o caminho do token
+			no json appsettings.json:
+				
+				var secret = Encoding.ASCII.GetBytes(_configuration.GetSection("JwtConfigurations:Secret").Value);
+				
+			
+			Vamos aproveitar e limpar a casa com os códiogos que estão comentados nesta controller.
+			
+			
+			Ok, agora dentro da pasta Configurations vamos criar uma interface IAuthenticationService do tipo public.
+			
+			Dentro do constructor da UsuarioController vamos implementar a interface IAuthenticationService 
+			autenticationService e trazendo a Interface ficando dessa forma:
+			
+				private readonly IAuthenticationService _authenticationService;
+				
+				public UsuarioController(
+					IUsuarioRepository usuarioRepository,
+					IConfiguration configuration,
+					IAuthenticationService authenticationService)
+					{
+						_usuarioRepository = usuarioRepository;
+						_configuration = configuration;
+						_authenticationService = authenticationService;
+					}	
+
+			Agora vamos inserir o seguinte codigo no final do metodo de token que traz os claims, e gerar o 
+			metodo GerarToken e passar o usuarioViewModelOutput:
+			
+				var token = _authenticationService.GerarToken(usuarioViewModelOutput); /*esse metodo traz uma
+				string na IAuthenticationService*/
+				
+			após isso vamos comentar todo o codigo acima da var token.
+			
+			
+			Agora vamos criar a implementação da interface IAuthenticationService, criando uma classe na pasta
+			Configurations e nomea-lá como JwtServices, implementando (ou herdando) a IAuthenticationService e
+			implementando o metodo GerarToken.Dentro deste metodo o GerarToken vamos inserir o código de token,
+			que foi comentado na UsuarioController inserindo no final o return token;	
+			
+			
+			Dentro da classe UsuarioController vamos recortar o metodo:
+			
+			 private readonly IConfiguration _configuration; -- e as suas inicialização no constructor
+			 
+			
+			pois estamos refatorando para o JwtServices:
+			 
+			 
+			 private readonly IConfiguration _configuration;
+			 
+			 public JwtServices(IConfiguration configuration)
+			 {
+				 _configuration = configuration;
+			 }	 
+			 
+			Vamos começar a trabalhar com banco de dados trazendo o seguinte codigo e gerando o metodo
+			ObterUsuario na implementação UsuarioRepository e implementar na interface IUsuarioRepository,
+			trazendo também algumas condicões de Request.Dentro da IActionResult Logar.
+			
+				var usuario = _usuarioRepository.ObterUsuario(loginViewModelInput.Login);
+				
+				if (usuario == null)
+				{
+					return BadRequest("Houve um erro ao tentar acessar.");
+				}
+				
+				
+				
+			Dentro do constructor ObterUsuario inserir o seguinte codigo:
+
+				public Usuario ObterUsuario(string login)
+				{
+					return _contexto.Usuario.FirstorDefault(u => u.Login == login);
+				}
+				
+				
+			Agora vamos injetar o nosso IAuthenticationService dentro de um service na Startup:
+
+				services.AddScoped<IAuthenticationService, JwtServices>();
+				
+			
+			
+		*Ok, agora vamos debugar e dentro da API, vamos logar e verificar se ele traz o token.
+
+			
+			
+			Continuando , agora vamos criar um repositorio do entidade Curso, em Business >Repositories
+			e nomea-la de ICursoRepository e dentro desta interface vamos criar os metodos:
+			
+				void Adicionar(Curso curso);
+				
+				void Commit();
+				
+				IList<Curso> ObterPorUsuario(int codigoUsuario);
+				
+			Ok, agora vamos criar a nossa implementação/abstração da interface acima, dentro de 
+			Infraestruture>Data>Repositories e nomea-la de CursoRepository e vamos 	implementar os metodos
+			da 	interface ICursoRepository.
+			
+			Vamos passar o EntityFramework  CursoDbContext para a implementação e gerar um construtor para 
+			instacia-lá:
+			
+				private readonly CursoDbContext _contexto;
+				
+			Ainda na implementação dentro do metodo Adicionar vamos passar o _contexto.Curso.Add(curso); e no
+			metodo Commit vamos passar o _contexto.SaveChanges() ; e n o IList<Curso> vamos passar o 
+			return _contexto.Curso.Where( w => w.CodigoUsuario == codigoUsuario).ToList();
+			
+			*OBS:Temos que implementar o metodo public DbSet<Curso> Curso { get; set;} no entity CursoDbContext
+			para passar o Curso , para conseguimos trablahar com Linq's. 
+			
+			
+			Agora dentro da Controller CursoController vamos instaciar o 
+			private readonly ICursoRepository _cursoRepository; e gerar o construtor 
+			
+			Ainda na CursoController dentro do metodo Post vamos criar umm novo Curso e chamar o nosso repositorio
+			e vamos dar um Commit para efetutar as transações no banco de dados:
+			
+				   Curso curso = new Curso();
+				   curso.Nome = cursoViewModelInput.Nome;
+				   curso.Descricao = cursoViewModelInput.Descricao;
+				   var codigoUsuario = int.Parse(User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
+				   curso.CodigoUsuario = codigoUsuario;
+				   _cursoRepository.Adicionar(curso);
+				   _cursoRepository.Commit();
+				   return Created("", cursoViewModelInput);
+				
+			Ok, uma vez que cadastramos o curso no metodo Post agora vamos obter esses cursos no metodo GET 
+			utilizando o nosso repositorio, trazendo dentro de ObterPorUsuario o metodo de autenticação do usuario
+			e select por causa do metodo ser uma lista , devolvendo um curso de entidade fazendo um parse para 
+			a view model CursoViewModelOutput, excluindo a var curso e o cursos.Add Monckado :
+			
+				var codigoUsuario = int.Parse(User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
+				var cursos = _cursoRepository.ObterPorUsuario(codigoUsuario)
+					.Select(s => new CursoViewModelOutput()
+					{
+						Nome = s.Nome,
+						Descricao = s.Descricao,
+						Login = s.Usuario.Login  //Para trazer o nome do Usuario e não o codigo **Include
+					});	
+				
+				return Ok(cursos);	
+				
+			Vamos modicar o return do metodo ObterPorUsuario dentro da implementação CursoRepository, trazendo o
+			metodo Include para fazer um innerjoin com Usuario.
+			
+			return _contexto.Curso.include(i => i.Usuario).Where(w => w.CodigoUsuario == codigoUsuario)
+			
+			
+			Agora na classe Startup vamos injetar o service do CursoRepository:
+			
+			services.AddScoped<ICursoRepository, CursoRepository>();
+			
+			
+		*Ok, agora vamos debugar e dentro da API, vamos logar e auternticar , após isso vamos fazer um 
+			cadastro de um curso, obter o curso e verificar no banco.
+			
+-------------------------------------------------------//-----------------------------------------------------------			
+
+				
+			
+				
+				
+				
+				
+			
+			
+			
+			
+
+					
+					
+			
+			
+			
+				
+			
+				
+			 
+			 
+			 
+			
+
+				
+				
+
+				
+					
+					
+					
+				
+			
+			
+			
+			
+				
+				
+				
+			
+				
+				
+				
+			
+			
+			
+			
+		
+		
+		
+				
+			
+
+				
+
+				
+				 
+			
+
+			 	
+			 
+			
+			
+			
+
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+	
+			
+			
+				
+				
+				
+				
+				
+			
+			
+				
+
+					
+			
+				
+			
+			
+
+				
+				
+				
+			
+				
+					
+				
+				
+				
+				
+
+				
+			
+					
+				
+				
+				
+				
+				
+				
+				
+
+				
+			
+			
+
+				
+				
+								-
+			
+			
+			
+			
+			
+			
+			
+				
+				
+				
+				
+				
+				
+				
+			
+					
+			
+					
+					
+			 
+			 
+			 
+			 
+			 
+				
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			
+				
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+
+			
+				
+			
+			
+			
+				
+				
+				
+				
+				
+					
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	  
+	 Vamos criar um nova rota dentro de UsuarioController
+
+		Trazendo um metodo IActionResult Registrar(RegistarViewModelImput loginViewModelInput) essa Rota trará o
+		return Created("",loginViewModelInput)
+		
+		modificar dentro da Data annotation Route("api/v1/usuario) para versionar como "v1")
+		
+		modificar dentro da Data annotation Route("logar")- dentro do metodo IActionResult Logar
+		
+		modificar dentro da Data annotation Route("registrar)  e [HttpPost]- dentro do metodo IActionResult Registrar
+
+	---------------------------------------------------------------------------------------------------------
+	  **Novamente,vamo rodar em modo debug e vamos rodar a url no Postman
+
+		https://localhost:XXXX/api/v1/usuario/logar        --POST
+		https://localhost:XXXX/api/v1/usuario/registrar    --POST 
+		
+		{
+			"Login": "William",
+			"Senha": "123",
+			"Email": "teste@teste.com"
+			
+		}
+	---------------------------------------------------------------------------------------------------------
+	
+	
+		
+		
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	
+	
+	
+	
+	
+			
+			
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+		
+	  	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+

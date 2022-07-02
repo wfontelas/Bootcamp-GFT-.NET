@@ -1,0 +1,295 @@
+--------------------------------------------------------------------------------------------------------------------
+**************Configuração da Arquitetura do Back-end com .Net Core - Desenvolvimento .NET Core Avançado************
+--------------------------------------------------------------------------------------------------------------------
+***APRESENTAÇÃO DO CENÁRIO E DOCUMENTAÇÃO DA API COM SWAGGER.***
+
+	-Introdução e setup da API
+	
+	Objetivos:
+	
+	-Organizar os componentes de uma aplicação
+	-Documentar uma API
+	-Aplicação de Design Pattern
+	
+--------------------------------------------------------*	
+	***Parte 1: Apresentação do cenário***
+	
+	API Rest -Backend (SQL, Mobile, Website- Frontend)
+	
+	Cenário
+	
+	-Cadastro de usuário
+	-Login de usuário
+	-Cadastro de curso usuário autenticado
+	-Lista de cursos do usuário autenticado
+--------------------------------------------------------*	
+	***Parte 2: Setup da API***
+	
+	Visual Studio
+	
+	Criar um novo projeto ASP.NET Cor Web Application ou API Web do ASP.NET Core
+	
+	
+	projeto:curso.api
+	Solução:curso
+	
+	Após criar o projeto vamos deletar as classe WeatherForecast.cs e a Controller WeatherForecastController
+	
+	Modificar launchSettings.json nas chaves "launchUrl" para vazio 
+	
+	
+	-Vamos iniciar as primeiras configurações das nossas rotas
+	
+	 Criar uma Controller do tipo API controller -Empty e nomea-lá como UsuarioController
+	 
+	 Dentro da classe Usuario Controller criar um IActionResult do tipo público com o nome de Logar, informando que
+	 essa rota terá o verbo HttpPost e trará um return OK(loginViewModelInput)
+	 
+	 Após isso , dentro do projeto criar uma pasta chamada Models e dentro da Models criar uma pasta com o nome
+	 de Usuarios e criar uma classe/model com o nome LoginViewModelInput
+	 
+		dentro da model LoginViewModelInput criar:
+		
+			prop string Login
+			prop string Senha
+			
+	Voltando para a Controller UsuarioController vamos passar model LoginViewModelInput loginViewModelInput dentro de Logar()
+	e trazer o import da model
+	
+	 
+	--------------------------------------------------------------------------------------------------------
+	 **Nesse instante vamo rodar em modo debug e testar no app Postman**
+	  
+	  Usar a ferramenta Post dentro do Postman, vamos colar a url e a rota "/api/[controller]" , modificando
+	  o Body para o tipo Raw  e JSON(application/json)
+	  
+	  {
+		"Login" : "teste",
+		"Senha"	: "senha"
+	  }
+	----------------------------------------------------------------------------------------------------------  
+	 Continuando...vamos criar uma nova model , a RegistroViewModelInput:
+		
+		-prop string Login
+		-prop string Email
+		-prop string Senha
+		
+		Trazendo as Data Annotations do tipo Required com ErrorMessage ""campo" é obrigatorio" para cada prop criada, 
+		e importar as using's
+		
+		
+		
+	Configuração do swagger para a documentação da API
+	
+		Botão direito no projeto >Propriedades>Build>seleciona a opção "XML documentation file" (curso.api.xml)
+		após isso compilar para gerar o XML --Cria Metadata (Documentação) 
+		
+		Swagger - instalar o pacote no Gerenciador de Pacotes NuGet - Swashbuckle.AspNetCore.Swagger
+			-Na classe Startup No metodo ConfigureServices  adicionar o:
+			services.AddSwaggerGen(c =>
+				{
+					var xmlFile = ${Assembly.GetExecutingAssembly().GetName().Name}.xml;
+					var xmlPath =Path.Combine(AppContext.BaseDirectory, xmlFile);  --diretoria da aplicação
+					c.IncludeXmlComments(xmlPath);
+				}
+				
+			-Adicionar o middleware e configurar a sua rota:
+				
+				app.UseSwagger();
+				app.UseSwaggerUI(c =>
+				{
+					c.SwaggerEndpoint("/swagger/v1/swagger.json","Api curso")
+					c.RoutePrefix = string.Empty;
+				}
+				
+			
+			
+			Instalar o pacote no Gerenciador de Pacotes- Swashbuckle.AspNetCore.Annotations	e colocar os Annotations
+			na UsuarioController
+			
+			Criar a ViewModel ValidaCampoViewModelOutput e a ErroGenericoViewModel dentro da pasta Models
+				-trazendo uma prop string Mensagem na  ErroGenericoViewModel
+				-trazendo uma prop IEnumerable<string> Erros {get; private set;} e um metodo para inicializar a 
+				 prop dentro da ViewModel ValidaCampoViewModelOutput:
+				 -public ValidaCampoViewModelOutput(IEnumerable<string> erros) 
+						{
+							Erros = erros;
+						}	
+			
+			
+			[SwaggerResponse(statusCode: 200, description: "Sucesso ao autenticar", Type = typeof(LoginViewModelInput))]
+			[SwaggerResponse(statusCode: 400, description: "Campos Obrigatórios", Type = typeof(ValidaCampoViewModelOutput))]
+			[SwaggerResponse(statusCode: 500, description: "Erro interno", Type = typeof(ErroGenericoViewModel))]
+			
+			
+			****Rodar em Debug****
+			
+			
+		Continuando...
+		Setup validação de entrada de dados:
+		
+			Na ViewModel Models>Usuarios> LoginViewModelInput criar a Data Annotations:
+			
+			[Required(ErrorMessage = "O Login é obrigatório"]
+			[Required(ErrorMessage = "A senha é obrigatório"]
+			
+			
+			
+			Configuração para trazer somente a lista de Erros (Usando o ConfigureApiBehaviorOptions)
+			
+			No metodo ConfigureServices da Startup:
+			
+				services.AddController().ConfigureApiBehaviorOptions(options =>
+				{
+				
+					options.SuppressModelStateInvalidFilter = true; //desabilitar o Model status , para customizar
+				
+				});
+			
+			E na viewController UsuarioController, dentro do metodo IActionResult Logar, fazer uma verificação se
+			o status não é válido:
+			
+			public IActionResult Logar(LoginViewModelInput loginViewModelInput)
+			{
+				if(!ModelState.IsValid)
+				{
+					return BadRequest(new ValidaCampoViewModelOutput(ModelState.SelectMany(sm => sm.Value.Errors)
+					.Select(s => s.ErrorMessage)));
+					
+				}
+				
+			 Filtros (ActionFilter)	
+			 
+			 Basicamente os filtros intercepta as requests
+			 
+			 -Botão direto em cima do projeto > Adicionar > Nova Pasta como nome de "Filters".
+			 -Criar uma classe com o nome de ValidacaoModelStateCustomizado dentro da pasta "Filters"
+			 -O classe criada usa a POO , e herda o atributo "ActionFileterAttribute"
+			 -Dentro da classe acima, criar um metodo public override void para sobreescrever o metodo 
+			 OnActionExecuting(ActionExecutingContext context) Ctrl+F4
+			 -Trazer a condição if(!ModelState.IsValid).... da controller para dentro do metodo acima
+			 -Comentar a condição if(!ModelState.IsValid)... dentro da Controller "UsuarioController"
+			 -Ainda na Controller "UsuarioController" inserir o DataAnnotation [ValidacaoModelStateCustomizado]
+			 na rota Logar e na rota registrar.
+			 
+			 -----------------------------------------//---------------------------------------------------------
+			 
+			 ***PROTEGENDO A API***
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			
+				
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+
+			
+				
+			
+			
+			
+				
+				
+				
+				
+				
+					
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	  
+	 Vamos criar um nova rota dentro de UsuarioController
+
+		Trazendo um metodo IActionResult Registrar(RegistarViewModelImput loginViewModelInput) essa Rota trará o
+		return Created("",loginViewModelInput)
+		
+		modificar dentro da Data annotation Route("api/v1/usuario) para versionar como "v1")
+		
+		modificar dentro da Data annotation Route("logar")- dentro do metodo IActionResult Logar
+		
+		modificar dentro da Data annotation Route("registrar)  e [HttpPost]- dentro do metodo IActionResult Registrar
+
+	---------------------------------------------------------------------------------------------------------
+	  **Novamente,vamo rodar em modo debug e vamos rodar a url no Postman
+
+		https://localhost:XXXX/api/v1/usuario/logar        --POST
+		https://localhost:XXXX/api/v1/usuario/registrar    --POST 
+		
+		{
+			"Login": "William",
+			"Senha": "123",
+			"Email": "teste@teste.com"
+			
+		}
+	---------------------------------------------------------------------------------------------------------
+	
+	
+		
+		
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	
+	
+	
+	
+	
+			
+			
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+		
+	  	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
