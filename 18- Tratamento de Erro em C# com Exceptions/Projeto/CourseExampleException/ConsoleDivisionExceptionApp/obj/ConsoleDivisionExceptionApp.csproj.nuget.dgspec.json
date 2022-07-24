@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\ConsoleDivisionExceptionApp.csproj": {}
+    "c:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\ConsoleDivisionExceptionApp.csproj": {}
   },
   "projects": {
-    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\ConsoleDivisionExceptionApp.csproj": {
+    "c:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\ConsoleDivisionExceptionApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\ConsoleDivisionExceptionApp.csproj",
+        "projectUniqueName": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\ConsoleDivisionExceptionApp.csproj",
         "projectName": "ConsoleDivisionExceptionApp",
-        "projectPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\ConsoleDivisionExceptionApp.csproj",
+        "projectPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\ConsoleDivisionExceptionApp.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\obj\\",
+        "outputPath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\William\\source\\repos\\CursoAPI\\curso.api\\curso.api.csproj": {}
+    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\20-Configuração da Arquitetura back-end com .NET Core\\CursoAPI\\curso.api\\curso.api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\William\\source\\repos\\CursoAPI\\curso.api\\curso.api.csproj": {
+    "C:\\workspace\\Bootcamp GFT Start #3 .NET\\20-Configuração da Arquitetura back-end com .NET Core\\CursoAPI\\curso.api\\curso.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\William\\source\\repos\\CursoAPI\\curso.api\\curso.api.csproj",
+        "projectUniqueName": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\20-Configuração da Arquitetura back-end com .NET Core\\CursoAPI\\curso.api\\curso.api.csproj",
         "projectName": "curso.api",
-        "projectPath": "C:\\Users\\William\\source\\repos\\CursoAPI\\curso.api\\curso.api.csproj",
+        "projectPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\20-Configuração da Arquitetura back-end com .NET Core\\CursoAPI\\curso.api\\curso.api.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\William\\source\\repos\\CursoAPI\\curso.api\\obj\\",
+        "outputPath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\20-Configuração da Arquitetura back-end com .NET Core\\CursoAPI\\curso.api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -105,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

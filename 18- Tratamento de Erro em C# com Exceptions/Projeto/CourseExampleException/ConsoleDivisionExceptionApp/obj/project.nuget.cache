@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0MWtFRf6B9Vus2pTP+9TV7aMJytFjOPQZpK9QaG6fU3bZuVAoWl2WtGgS7WFXbhry6ZRFJvw6nuVkH2nwsKmgQ==",
+  "dgSpecHash": "K3BhW3bN3jdiLUkh6bbFsAKU/JiFWmUidKhCxjhynb0ZzIE2Kp1qk/wnrXK7oOJ7rQZI4y6S4v4e94iR/NQfLA==",
   "success": true,
-  "projectFilePath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\ConsoleDivisionExceptionApp.csproj",
+  "projectFilePath": "c:\\workspace\\Bootcamp GFT Start #3 .NET\\18- Tratamento de Erro em C# com Exceptions\\Projeto\\CourseExampleException\\ConsoleDivisionExceptionApp\\ConsoleDivisionExceptionApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

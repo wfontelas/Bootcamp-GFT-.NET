@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vu6UlHrbw/svaOmkDwvhjqcuZHn6DhV+q0ppq5eeV0zNBPqT0fRoKWGsRoBInKHyJnq48itdoTSnTcTOtap8wQ==",
+  "dgSpecHash": "w5aOIJJVSOkOBQ3OsdMVMzeWMcFLIqFFRCmeUAL2SS6B0nomxuLbkHfRlzQwyDwjWRt232Z9rHbnPIVoGHZMGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\William\\source\\repos\\CursoAPI\\curso.api\\curso.api.csproj",
+  "projectFilePath": "C:\\workspace\\Bootcamp GFT Start #3 .NET\\20-Configuração da Arquitetura back-end com .NET Core\\CursoAPI\\curso.api\\curso.api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\William\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
